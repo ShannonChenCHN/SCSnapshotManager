@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		581F03F31EB09238004292F7 /* SCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581F03F11EB09238004292F7 /* SCWebViewController.m */; };
+		581F03F41EB09238004292F7 /* SCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581F03F21EB09238004292F7 /* SCWebViewController.xib */; };
+		581F03FA1EB0BA51004292F7 /* SCPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581F03F91EB0BA51004292F7 /* SCPreviewViewController.xib */; };
+		585113CF1E7EBF950053AFBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113CE1E7EBF950053AFBB /* main.m */; };
+		585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D11E7EBF950053AFBB /* AppDelegate.m */; };
+		585113D51E7EBF950053AFBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D41E7EBF950053AFBB /* ViewController.m */; };
+		585113D81E7EBF950053AFBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585113D61E7EBF950053AFBB /* Main.storyboard */; };
+		585113DA1E7EBF950053AFBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585113D91E7EBF950053AFBB /* Assets.xcassets */; };
+		585113DD1E7EBF950053AFBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585113DB1E7EBF950053AFBB /* LaunchScreen.storyboard */; };
+		585113E81E7EC2AD0053AFBB /* SCPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113E61E7EC2AD0053AFBB /* SCPreviewViewController.m */; };
+		58F6040D1EB0EB9500E81A55 /* SCContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6040B1EB0EB9500E81A55 /* SCContentViewController.m */; };
+		58F6040E1EB0EB9500E81A55 /* SCContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F6040C1EB0EB9500E81A55 /* SCContentViewController.xib */; };
+		58F604121EB0EBB400E81A55 /* SCURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604101EB0EBB400E81A55 /* SCURLViewController.m */; };
+		58F604131EB0EBB400E81A55 /* SCURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F604111EB0EBB400E81A55 /* SCURLViewController.xib */; };
+		58F604541EB0F3F300E81A55 /* NSString+SCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6042F1EB0F3F200E81A55 /* NSString+SCExtension.m */; };
+		58F604551EB0F3F300E81A55 /* UIColor+SCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604311EB0F3F200E81A55 /* UIColor+SCExtension.m */; };
+		58F604561EB0F3F300E81A55 /* UIImage+SCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604331EB0F3F200E81A55 /* UIImage+SCExtension.m */; };
+		58F604571EB0F3F300E81A55 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604351EB0F3F200E81A55 /* UIView+Layout.m */; };
+		58F604581EB0F3F300E81A55 /* SCQRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604381EB0F3F200E81A55 /* SCQRCodeGenerator.m */; };
+		58F604591EB0F3F300E81A55 /* SCSnapshotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6043A1EB0F3F200E81A55 /* SCSnapshotContent.m */; };
+		58F6045A1EB0F3F300E81A55 /* SCSnapshotContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6043C1EB0F3F200E81A55 /* SCSnapshotContentView.m */; };
+		58F6045B1EB0F3F300E81A55 /* SCSnapshotGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6043E1EB0F3F200E81A55 /* SCSnapshotGenerator.m */; };
+		58F6045C1EB0F3F300E81A55 /* SCSnapshotImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604401EB0F3F200E81A55 /* SCSnapshotImageDownloader.m */; };
+		58F6045D1EB0F3F300E81A55 /* SCSnapshotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604421EB0F3F200E81A55 /* SCSnapshotManager.m */; };
+		58F6045E1EB0F3F300E81A55 /* SCSnapshotWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604441EB0F3F200E81A55 /* SCSnapshotWebView.m */; };
+		E1E185518C9D84B07BC9C2FC /* libPods-SCSnapshotDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC506717A181EBC45BB749A /* libPods-SCSnapshotDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		581F03F01EB09238004292F7 /* SCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewController.h; sourceTree = "<group>"; };
+		581F03F11EB09238004292F7 /* SCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewController.m; sourceTree = "<group>"; };
+		581F03F21EB09238004292F7 /* SCWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCWebViewController.xib; sourceTree = "<group>"; };
+		581F03F91EB0BA51004292F7 /* SCPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCPreviewViewController.xib; sourceTree = "<group>"; };
+		585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCSnapshotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		585113CE1E7EBF950053AFBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		585113D01E7EBF950053AFBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		585113D11E7EBF950053AFBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		585113D31E7EBF950053AFBB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		585113D41E7EBF950053AFBB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		585113D71E7EBF950053AFBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		585113D91E7EBF950053AFBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		585113DC1E7EBF950053AFBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		585113DE1E7EBF950053AFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		585113E51E7EC2AD0053AFBB /* SCPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPreviewViewController.h; sourceTree = "<group>"; };
+		585113E61E7EC2AD0053AFBB /* SCPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPreviewViewController.m; sourceTree = "<group>"; };
+		58F6040A1EB0EB9500E81A55 /* SCContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContentViewController.h; sourceTree = "<group>"; };
+		58F6040B1EB0EB9500E81A55 /* SCContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContentViewController.m; sourceTree = "<group>"; };
+		58F6040C1EB0EB9500E81A55 /* SCContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCContentViewController.xib; sourceTree = "<group>"; };
+		58F6040F1EB0EBB400E81A55 /* SCURLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCURLViewController.h; sourceTree = "<group>"; };
+		58F604101EB0EBB400E81A55 /* SCURLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCURLViewController.m; sourceTree = "<group>"; };
+		58F604111EB0EBB400E81A55 /* SCURLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCURLViewController.xib; sourceTree = "<group>"; };
+		58F6042E1EB0F3F200E81A55 /* NSString+SCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCExtension.h"; sourceTree = "<group>"; };
+		58F6042F1EB0F3F200E81A55 /* NSString+SCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCExtension.m"; sourceTree = "<group>"; };
+		58F604301EB0F3F200E81A55 /* UIColor+SCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SCExtension.h"; sourceTree = "<group>"; };
+		58F604311EB0F3F200E81A55 /* UIColor+SCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SCExtension.m"; sourceTree = "<group>"; };
+		58F604321EB0F3F200E81A55 /* UIImage+SCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SCExtension.h"; sourceTree = "<group>"; };
+		58F604331EB0F3F200E81A55 /* UIImage+SCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SCExtension.m"; sourceTree = "<group>"; };
+		58F604341EB0F3F200E81A55 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		58F604351EB0F3F200E81A55 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		58F604371EB0F3F200E81A55 /* SCQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeGenerator.h; sourceTree = "<group>"; };
+		58F604381EB0F3F200E81A55 /* SCQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCQRCodeGenerator.m; sourceTree = "<group>"; };
+		58F604391EB0F3F200E81A55 /* SCSnapshotContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotContent.h; sourceTree = "<group>"; };
+		58F6043A1EB0F3F200E81A55 /* SCSnapshotContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotContent.m; sourceTree = "<group>"; };
+		58F6043B1EB0F3F200E81A55 /* SCSnapshotContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotContentView.h; sourceTree = "<group>"; };
+		58F6043C1EB0F3F200E81A55 /* SCSnapshotContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotContentView.m; sourceTree = "<group>"; };
+		58F6043D1EB0F3F200E81A55 /* SCSnapshotGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotGenerator.h; sourceTree = "<group>"; };
+		58F6043E1EB0F3F200E81A55 /* SCSnapshotGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotGenerator.m; sourceTree = "<group>"; };
+		58F6043F1EB0F3F200E81A55 /* SCSnapshotImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotImageDownloader.h; sourceTree = "<group>"; };
+		58F604401EB0F3F200E81A55 /* SCSnapshotImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotImageDownloader.m; sourceTree = "<group>"; };
+		58F604411EB0F3F200E81A55 /* SCSnapshotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotManager.h; sourceTree = "<group>"; };
+		58F604421EB0F3F200E81A55 /* SCSnapshotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotManager.m; sourceTree = "<group>"; };
+		58F604431EB0F3F200E81A55 /* SCSnapshotWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotWebView.h; sourceTree = "<group>"; };
+		58F604441EB0F3F200E81A55 /* SCSnapshotWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotWebView.m; sourceTree = "<group>"; };
+		A4938B8E35E9ADC5BA7874CE /* Pods-SCSnapshotDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCSnapshotDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCSnapshotDemo/Pods-SCSnapshotDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DBC506717A181EBC45BB749A /* libPods-SCSnapshotDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SCSnapshotDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4C822F41D4DD76FDBF5135 /* Pods-SCSnapshotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCSnapshotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCSnapshotDemo/Pods-SCSnapshotDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		585113C71E7EBF950053AFBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E185518C9D84B07BC9C2FC /* libPods-SCSnapshotDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40D93F775BD1D884CFE52660 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4938B8E35E9ADC5BA7874CE /* Pods-SCSnapshotDemo.debug.xcconfig */,
+				FB4C822F41D4DD76FDBF5135 /* Pods-SCSnapshotDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		585113C11E7EBF950053AFBB = {
+			isa = PBXGroup;
+			children = (
+				585113CC1E7EBF950053AFBB /* SCSnapshotDemo */,
+				585113CB1E7EBF950053AFBB /* Products */,
+				40D93F775BD1D884CFE52660 /* Pods */,
+				F0087A7DF948A96E2C02DF02 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		585113CB1E7EBF950053AFBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		585113CC1E7EBF950053AFBB /* SCSnapshotDemo */ = {
+			isa = PBXGroup;
+			children = (
+				58F6042C1EB0F3F200E81A55 /* SnapshotManager */,
+				585113D01E7EBF950053AFBB /* AppDelegate.h */,
+				585113D11E7EBF950053AFBB /* AppDelegate.m */,
+				585113D31E7EBF950053AFBB /* ViewController.h */,
+				585113D41E7EBF950053AFBB /* ViewController.m */,
+				58F6040A1EB0EB9500E81A55 /* SCContentViewController.h */,
+				58F6040B1EB0EB9500E81A55 /* SCContentViewController.m */,
+				58F6040C1EB0EB9500E81A55 /* SCContentViewController.xib */,
+				58F6040F1EB0EBB400E81A55 /* SCURLViewController.h */,
+				58F604101EB0EBB400E81A55 /* SCURLViewController.m */,
+				58F604111EB0EBB400E81A55 /* SCURLViewController.xib */,
+				585113E51E7EC2AD0053AFBB /* SCPreviewViewController.h */,
+				585113E61E7EC2AD0053AFBB /* SCPreviewViewController.m */,
+				581F03F91EB0BA51004292F7 /* SCPreviewViewController.xib */,
+				581F03F01EB09238004292F7 /* SCWebViewController.h */,
+				581F03F11EB09238004292F7 /* SCWebViewController.m */,
+				581F03F21EB09238004292F7 /* SCWebViewController.xib */,
+				585113D61E7EBF950053AFBB /* Main.storyboard */,
+				585113D91E7EBF950053AFBB /* Assets.xcassets */,
+				585113DB1E7EBF950053AFBB /* LaunchScreen.storyboard */,
+				585113DE1E7EBF950053AFBB /* Info.plist */,
+				585113CD1E7EBF950053AFBB /* Supporting Files */,
+			);
+			path = SCSnapshotDemo;
+			sourceTree = "<group>";
+		};
+		585113CD1E7EBF950053AFBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				585113CE1E7EBF950053AFBB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58F6042C1EB0F3F200E81A55 /* SnapshotManager */ = {
+			isa = PBXGroup;
+			children = (
+				58F6042D1EB0F3F200E81A55 /* Categories */,
+				58F604361EB0F3F200E81A55 /* Classes */,
+			);
+			path = SnapshotManager;
+			sourceTree = SOURCE_ROOT;
+		};
+		58F6042D1EB0F3F200E81A55 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				58F6042E1EB0F3F200E81A55 /* NSString+SCExtension.h */,
+				58F6042F1EB0F3F200E81A55 /* NSString+SCExtension.m */,
+				58F604301EB0F3F200E81A55 /* UIColor+SCExtension.h */,
+				58F604311EB0F3F200E81A55 /* UIColor+SCExtension.m */,
+				58F604321EB0F3F200E81A55 /* UIImage+SCExtension.h */,
+				58F604331EB0F3F200E81A55 /* UIImage+SCExtension.m */,
+				58F604341EB0F3F200E81A55 /* UIView+Layout.h */,
+				58F604351EB0F3F200E81A55 /* UIView+Layout.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		58F604361EB0F3F200E81A55 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				58F604371EB0F3F200E81A55 /* SCQRCodeGenerator.h */,
+				58F604381EB0F3F200E81A55 /* SCQRCodeGenerator.m */,
+				58F604391EB0F3F200E81A55 /* SCSnapshotContent.h */,
+				58F6043A1EB0F3F200E81A55 /* SCSnapshotContent.m */,
+				58F6043B1EB0F3F200E81A55 /* SCSnapshotContentView.h */,
+				58F6043C1EB0F3F200E81A55 /* SCSnapshotContentView.m */,
+				58F6043D1EB0F3F200E81A55 /* SCSnapshotGenerator.h */,
+				58F6043E1EB0F3F200E81A55 /* SCSnapshotGenerator.m */,
+				58F6043F1EB0F3F200E81A55 /* SCSnapshotImageDownloader.h */,
+				58F604401EB0F3F200E81A55 /* SCSnapshotImageDownloader.m */,
+				58F604411EB0F3F200E81A55 /* SCSnapshotManager.h */,
+				58F604421EB0F3F200E81A55 /* SCSnapshotManager.m */,
+				58F604431EB0F3F200E81A55 /* SCSnapshotWebView.h */,
+				58F604441EB0F3F200E81A55 /* SCSnapshotWebView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F0087A7DF948A96E2C02DF02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBC506717A181EBC45BB749A /* libPods-SCSnapshotDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		585113C91E7EBF950053AFBB /* SCSnapshotDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 585113E11E7EBF950053AFBB /* Build configuration list for PBXNativeTarget "SCSnapshotDemo" */;
+			buildPhases = (
+				2422BA1822B138E63FF56CF9 /* [CP] Check Pods Manifest.lock */,
+				585113C61E7EBF950053AFBB /* Sources */,
+				585113C71E7EBF950053AFBB /* Frameworks */,
+				585113C81E7EBF950053AFBB /* Resources */,
+				0C64E757AFCDCF5B81EC5A93 /* [CP] Embed Pods Frameworks */,
+				94718E8C96C4801BC02EA512 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCSnapshotDemo;
+			productName = SCSnapshotDemo;
+			productReference = 585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		585113C21E7EBF950053AFBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SC;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = ShannonChen;
+				TargetAttributes = {
+					585113C91E7EBF950053AFBB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = L32PN8QKLZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 585113C51E7EBF950053AFBB /* Build configuration list for PBXProject "SCSnapshotDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 585113C11E7EBF950053AFBB;
+			productRefGroup = 585113CB1E7EBF950053AFBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				585113C91E7EBF950053AFBB /* SCSnapshotDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		585113C81E7EBF950053AFBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				585113DD1E7EBF950053AFBB /* LaunchScreen.storyboard in Resources */,
+				58F604131EB0EBB400E81A55 /* SCURLViewController.xib in Resources */,
+				585113DA1E7EBF950053AFBB /* Assets.xcassets in Resources */,
+				58F6040E1EB0EB9500E81A55 /* SCContentViewController.xib in Resources */,
+				581F03FA1EB0BA51004292F7 /* SCPreviewViewController.xib in Resources */,
+				581F03F41EB09238004292F7 /* SCWebViewController.xib in Resources */,
+				585113D81E7EBF950053AFBB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C64E757AFCDCF5B81EC5A93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SCSnapshotDemo/Pods-SCSnapshotDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2422BA1822B138E63FF56CF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94718E8C96C4801BC02EA512 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SCSnapshotDemo/Pods-SCSnapshotDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		585113C61E7EBF950053AFBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F6045C1EB0F3F300E81A55 /* SCSnapshotImageDownloader.m in Sources */,
+				58F604121EB0EBB400E81A55 /* SCURLViewController.m in Sources */,
+				585113D51E7EBF950053AFBB /* ViewController.m in Sources */,
+				581F03F31EB09238004292F7 /* SCWebViewController.m in Sources */,
+				58F604561EB0F3F300E81A55 /* UIImage+SCExtension.m in Sources */,
+				58F6045B1EB0F3F300E81A55 /* SCSnapshotGenerator.m in Sources */,
+				58F604581EB0F3F300E81A55 /* SCQRCodeGenerator.m in Sources */,
+				58F604541EB0F3F300E81A55 /* NSString+SCExtension.m in Sources */,
+				585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */,
+				58F6045E1EB0F3F300E81A55 /* SCSnapshotWebView.m in Sources */,
+				585113CF1E7EBF950053AFBB /* main.m in Sources */,
+				58F6045A1EB0F3F300E81A55 /* SCSnapshotContentView.m in Sources */,
+				58F604551EB0F3F300E81A55 /* UIColor+SCExtension.m in Sources */,
+				58F6040D1EB0EB9500E81A55 /* SCContentViewController.m in Sources */,
+				58F604571EB0F3F300E81A55 /* UIView+Layout.m in Sources */,
+				585113E81E7EC2AD0053AFBB /* SCPreviewViewController.m in Sources */,
+				58F604591EB0F3F300E81A55 /* SCSnapshotContent.m in Sources */,
+				58F6045D1EB0F3F300E81A55 /* SCSnapshotManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		585113D61E7EBF950053AFBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				585113D71E7EBF950053AFBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		585113DB1E7EBF950053AFBB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				585113DC1E7EBF950053AFBB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		585113DF1E7EBF950053AFBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		585113E01E7EBF950053AFBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		585113E21E7EBF950053AFBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4938B8E35E9ADC5BA7874CE /* Pods-SCSnapshotDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L32PN8QKLZ;
+				INFOPLIST_FILE = SCSnapshotDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShannonChen.SCSnapshotDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		585113E31E7EBF950053AFBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB4C822F41D4DD76FDBF5135 /* Pods-SCSnapshotDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L32PN8QKLZ;
+				INFOPLIST_FILE = SCSnapshotDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShannonChen.SCSnapshotDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		585113C51E7EBF950053AFBB /* Build configuration list for PBXProject "SCSnapshotDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				585113DF1E7EBF950053AFBB /* Debug */,
+				585113E01E7EBF950053AFBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		585113E11E7EBF950053AFBB /* Build configuration list for PBXNativeTarget "SCSnapshotDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				585113E21E7EBF950053AFBB /* Debug */,
+				585113E31E7EBF950053AFBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 585113C21E7EBF950053AFBB /* Project object */;
+}

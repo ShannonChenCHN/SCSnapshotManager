@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SCContentViewController">
+            <connections>
+                <outlet property="generateButton" destination="hYc-ji-78i" id="XdP-Fv-hub"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYc-ji-78i">
+                    <rect key="frame" x="105" y="607" width="165" height="30"/>
+                    <state key="normal" title="    Generate Snapshot    "/>
+                    <connections>
+                        <action selector="generateSnapshot:" destination="-1" eventType="touchUpInside" id="4Y1-n9-B3l"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="post" translatesAutoresizingMaskIntoConstraints="NO" id="TjF-fC-wJ7">
+                    <rect key="frame" x="12" y="30" width="350" height="500"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="500" id="GMQ-rG-rfz"/>
+                        <constraint firstAttribute="width" constant="350" id="xCA-qd-fFt"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hYc-ji-78i" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6VE-uK-bbg"/>
+                <constraint firstItem="TjF-fC-wJ7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="dr2-Rp-M11"/>
+                <constraint firstAttribute="bottom" secondItem="hYc-ji-78i" secondAttribute="bottom" constant="30" id="nP2-Fl-NbS"/>
+                <constraint firstItem="TjF-fC-wJ7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oRc-Tx-Mf5"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="post" width="375" height="545"/>
+    </resources>
+</document>

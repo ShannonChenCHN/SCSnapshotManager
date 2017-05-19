@@ -1,14 +1,14 @@
 //
-//  SCSnapshotContentView.m
+//  SCSnapshotPostContentView.m
 //  SCSnapshotDemo
 //
 //  Created by ShannonChen on 2017/3/19.
 //  Copyright © 2017年 ShannonChen. All rights reserved.
 //
 
-#import "SCSnapshotContentView.h"
+#import "SCSnapshotPostContentView.h"
 
-#import "SCSnapshotContent.h"
+#import "SCSnapshotPostContent.h"
 
 #import "UIView+Layout.h"
 #import "UIColor+SCExtension.h"
@@ -75,13 +75,13 @@
 
 @end
 
-@interface SCSnapshotContentView ()
+@interface SCSnapshotPostContentView ()
 
 @end
 
-@implementation SCSnapshotContentView
+@implementation SCSnapshotPostContentView
 
-- (instancetype)initWithContent:(SCSnapshotContent *)content {
+- (instancetype)initWithContent:(SCSnapshotPostContent *)content {
     self = [super initWithFrame:CGRectMake(0, 0, kSnapshotWidth, 0)];
     if (self) {
         

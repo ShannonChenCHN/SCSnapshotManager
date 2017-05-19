@@ -1,19 +1,20 @@
 //
-//  SCSnapshotContent.m
+//  SCSnapshotPostContent.m
 //  SCSnapshotDemo
 //
 //  Created by ShannonChen on 2017/3/19.
 //  Copyright © 2017年 ShannonChen. All rights reserved.
 //
 
-#import "SCSnapshotContent.h"
+#import "SCSnapshotPostContent.h"
 
-@implementation SCSnapshotContent
-    
+@implementation SCSnapshotPostContent
+
+@synthesize shareUrl = _shareUrl, qrCodeImage = _qrCodeImage;
     
 + (instancetype)defaultContent {
     
-    SCSnapshotContent *content = [[SCSnapshotContent alloc] init];
+    SCSnapshotPostContent *content = [[SCSnapshotPostContent alloc] init];
     content.posterName = @"Yumi";
     content.posterAvatarURLString = @"http://f.yhres.com/editUserHeaderImage/2016/09/29/496809674363284.png-ssq75";
     content.userTagDescription = @"时尚达人/娱乐记者/模特";

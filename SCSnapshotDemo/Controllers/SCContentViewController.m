@@ -9,12 +9,13 @@
 #import "SCContentViewController.h"
 #import "SCPreviewViewController.h"
 
-#import "SCSnapshotContent.h"
+#import "SCSnapshotPostContent.h"
 #import "SCSnapshotManager.h"
 
 @interface SCContentViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *generateButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -51,7 +52,7 @@
 
 - (IBAction)generateSnapshot:(id)sender {
     
-    [SCSnapshotManager generateSnapshotWithContent:[SCSnapshotContent defaultContent] completionHander:^(UIImage * _Nullable snapshot, NSError * _Nullable error) {
+    [SCSnapshotManager generateSnapshotWithContent:[SCSnapshotPostContent defaultContent] completionHander:^(UIImage * _Nullable snapshot, NSError * _Nullable error) {
         if (!error) {
             SCPreviewViewController *controller = [[SCPreviewViewController alloc] initWithSnapshot:snapshot];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];

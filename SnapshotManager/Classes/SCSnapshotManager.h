@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class SCSnapshotContent;
+#import "SCSnapshotModel.h"
+@class SCSnapshotManager;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,19 +19,48 @@ NS_ASSUME_NONNULL_BEGIN
  @param snapshot 图文快照，失败则返回 nil
  @param error    失败则返回错误，成功则返回 nil
  */
-typedef void(^SCSnapshotCompletionHander)(UIImage * _Nullable snapshot, NSError * _Nullable error);
+typedef void(^SCSnapshotCompletionHandler)(UIImage * _Nullable snapshot, NSError * _Nullable error);
 
 
 /**
- 长图文分享，根据帖子内容生成长图文
+ 这个协议用于针对不同的快照类型进行自定义配置
+ */
+@protocol SCSnapshotProviderProtocol <NSObject>
+
+@required
+
+/// 校验 model，并将 model 统一转换成 遵循 SCSnapshotModel 协议的 model
+- (nullable id <SCSnapshotModel>)snapshotContentWithModel:(id)model;
+
+/// 要下载的图片 URL，是一个二维数组
+- (NSArray <NSArray <NSString *> *> *)imageURLsForDownloadingWithContent:(id <SCSnapshotModel>)content;
+
+/// 图片下载完成后，获取生成的 view
+- (nullable __kindof UIView *)snapshotViewWithDowloadedImages:(NSArray <NSArray <UIImage *> *> *)imageArrays content:(id <SCSnapshotModel>)content;
+
+
+@optional
+
+/// 完成分享快照
+- (void)snapshotManager:(SCSnapshotManager *)manager didFinishSharingSnapshot:(BOOL)success;
+
+/// 埋点
+- (void)trackEventWithContent:(id <SCSnapshotModel>)content behavior:(NSString *)behavior;
+
+@end
+
+
+/**
+ 根据 Model 数据生成长图文快照
  */
 @interface SCSnapshotManager : NSObject
 
-/// 根据 content 生成快照
-+ (void)generateSnapshotWithContent:(SCSnapshotContent *)content completionHander:(nullable SCSnapshotCompletionHander)completionHander;
+
+/// 生成并分享快照
++ (void)shareSnapshotWithModel:(id)model completionHandler:(nullable SCSnapshotCompletionHandler)completionHandler;
 
 /// 根据 h5 的 url 生成快照
-+ (void)generateSnapshotWithURLString:(NSString *)urlString completionHander:(nullable SCSnapshotCompletionHander)completionHander;
++ (void)generateSnapshotWithURLString:(NSString *)urlString completionHander:(nullable SCSnapshotCompletionHandler)completionHander;
 
 @end
 

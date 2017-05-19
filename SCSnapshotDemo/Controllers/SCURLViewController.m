@@ -36,7 +36,7 @@
     
     self.textField.text = @"https://github.com/ShannonChenCHN";
     
-    self.navigationItem.title = @"Generate From URL";
+    self.navigationItem.title = @"Generate From WebView";
 }
 
     

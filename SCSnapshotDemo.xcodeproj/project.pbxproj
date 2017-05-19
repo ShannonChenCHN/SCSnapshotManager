@@ -7,39 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		581F03F31EB09238004292F7 /* SCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581F03F11EB09238004292F7 /* SCWebViewController.m */; };
-		581F03F41EB09238004292F7 /* SCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581F03F21EB09238004292F7 /* SCWebViewController.xib */; };
-		581F03FA1EB0BA51004292F7 /* SCPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581F03F91EB0BA51004292F7 /* SCPreviewViewController.xib */; };
+		582C6E291ECDBEC5005216E4 /* SCSnapshotPostContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E1B1ECDBEC5005216E4 /* SCSnapshotPostContent.m */; };
+		582C6E2A1ECDBEC5005216E4 /* SCQRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E1F1ECDBEC5005216E4 /* SCQRCodeGenerator.m */; };
+		582C6E2B1ECDBEC5005216E4 /* SCSnapshotGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E211ECDBEC5005216E4 /* SCSnapshotGenerator.m */; };
+		582C6E2C1ECDBEC5005216E4 /* SCSnapshotImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E231ECDBEC5005216E4 /* SCSnapshotImageDownloader.m */; };
+		582C6E2D1ECDBEC5005216E4 /* SCSnapshotPostContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E261ECDBEC5005216E4 /* SCSnapshotPostContentView.m */; };
+		582C6E2E1ECDBEC5005216E4 /* SCSnapshotWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E281ECDBEC5005216E4 /* SCSnapshotWebView.m */; };
+		582C6E3C1ECDBFD2005216E4 /* SCContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E311ECDBFD2005216E4 /* SCContentViewController.m */; };
+		582C6E3D1ECDBFD2005216E4 /* SCContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C6E321ECDBFD2005216E4 /* SCContentViewController.xib */; };
+		582C6E3E1ECDBFD2005216E4 /* SCPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E341ECDBFD2005216E4 /* SCPreviewViewController.m */; };
+		582C6E3F1ECDBFD2005216E4 /* SCPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C6E351ECDBFD2005216E4 /* SCPreviewViewController.xib */; };
+		582C6E401ECDBFD2005216E4 /* SCURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E371ECDBFD2005216E4 /* SCURLViewController.m */; };
+		582C6E411ECDBFD2005216E4 /* SCURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C6E381ECDBFD2005216E4 /* SCURLViewController.xib */; };
+		582C6E421ECDBFD2005216E4 /* SCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E3A1ECDBFD2005216E4 /* SCWebViewController.m */; };
+		582C6E431ECDBFD2005216E4 /* SCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C6E3B1ECDBFD2005216E4 /* SCWebViewController.xib */; };
+		582C6E471ECDC783005216E4 /* SCSnapshotPostProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E461ECDC783005216E4 /* SCSnapshotPostProvider.m */; };
+		582C6E4C1ECDC970005216E4 /* SCSnapshotModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */; };
 		585113CF1E7EBF950053AFBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113CE1E7EBF950053AFBB /* main.m */; };
 		585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D11E7EBF950053AFBB /* AppDelegate.m */; };
 		585113D51E7EBF950053AFBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D41E7EBF950053AFBB /* ViewController.m */; };
 		585113D81E7EBF950053AFBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585113D61E7EBF950053AFBB /* Main.storyboard */; };
 		585113DA1E7EBF950053AFBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585113D91E7EBF950053AFBB /* Assets.xcassets */; };
 		585113DD1E7EBF950053AFBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585113DB1E7EBF950053AFBB /* LaunchScreen.storyboard */; };
-		585113E81E7EC2AD0053AFBB /* SCPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113E61E7EC2AD0053AFBB /* SCPreviewViewController.m */; };
-		58F6040D1EB0EB9500E81A55 /* SCContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6040B1EB0EB9500E81A55 /* SCContentViewController.m */; };
-		58F6040E1EB0EB9500E81A55 /* SCContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F6040C1EB0EB9500E81A55 /* SCContentViewController.xib */; };
-		58F604121EB0EBB400E81A55 /* SCURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604101EB0EBB400E81A55 /* SCURLViewController.m */; };
-		58F604131EB0EBB400E81A55 /* SCURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F604111EB0EBB400E81A55 /* SCURLViewController.xib */; };
 		58F604541EB0F3F300E81A55 /* NSString+SCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6042F1EB0F3F200E81A55 /* NSString+SCExtension.m */; };
 		58F604551EB0F3F300E81A55 /* UIColor+SCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604311EB0F3F200E81A55 /* UIColor+SCExtension.m */; };
 		58F604561EB0F3F300E81A55 /* UIImage+SCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604331EB0F3F200E81A55 /* UIImage+SCExtension.m */; };
 		58F604571EB0F3F300E81A55 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604351EB0F3F200E81A55 /* UIView+Layout.m */; };
-		58F604581EB0F3F300E81A55 /* SCQRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604381EB0F3F200E81A55 /* SCQRCodeGenerator.m */; };
-		58F604591EB0F3F300E81A55 /* SCSnapshotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6043A1EB0F3F200E81A55 /* SCSnapshotContent.m */; };
-		58F6045A1EB0F3F300E81A55 /* SCSnapshotContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6043C1EB0F3F200E81A55 /* SCSnapshotContentView.m */; };
-		58F6045B1EB0F3F300E81A55 /* SCSnapshotGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6043E1EB0F3F200E81A55 /* SCSnapshotGenerator.m */; };
-		58F6045C1EB0F3F300E81A55 /* SCSnapshotImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604401EB0F3F200E81A55 /* SCSnapshotImageDownloader.m */; };
 		58F6045D1EB0F3F300E81A55 /* SCSnapshotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604421EB0F3F200E81A55 /* SCSnapshotManager.m */; };
-		58F6045E1EB0F3F300E81A55 /* SCSnapshotWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604441EB0F3F200E81A55 /* SCSnapshotWebView.m */; };
 		E1E185518C9D84B07BC9C2FC /* libPods-SCSnapshotDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC506717A181EBC45BB749A /* libPods-SCSnapshotDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		581F03F01EB09238004292F7 /* SCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewController.h; sourceTree = "<group>"; };
-		581F03F11EB09238004292F7 /* SCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewController.m; sourceTree = "<group>"; };
-		581F03F21EB09238004292F7 /* SCWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCWebViewController.xib; sourceTree = "<group>"; };
-		581F03F91EB0BA51004292F7 /* SCPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCPreviewViewController.xib; sourceTree = "<group>"; };
+		582C6E1A1ECDBEC5005216E4 /* SCSnapshotPostContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotPostContent.h; sourceTree = "<group>"; };
+		582C6E1B1ECDBEC5005216E4 /* SCSnapshotPostContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotPostContent.m; sourceTree = "<group>"; };
+		582C6E1E1ECDBEC5005216E4 /* SCQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeGenerator.h; sourceTree = "<group>"; };
+		582C6E1F1ECDBEC5005216E4 /* SCQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCQRCodeGenerator.m; sourceTree = "<group>"; };
+		582C6E201ECDBEC5005216E4 /* SCSnapshotGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotGenerator.h; sourceTree = "<group>"; };
+		582C6E211ECDBEC5005216E4 /* SCSnapshotGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotGenerator.m; sourceTree = "<group>"; };
+		582C6E221ECDBEC5005216E4 /* SCSnapshotImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotImageDownloader.h; sourceTree = "<group>"; };
+		582C6E231ECDBEC5005216E4 /* SCSnapshotImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotImageDownloader.m; sourceTree = "<group>"; };
+		582C6E251ECDBEC5005216E4 /* SCSnapshotPostContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotPostContentView.h; sourceTree = "<group>"; };
+		582C6E261ECDBEC5005216E4 /* SCSnapshotPostContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotPostContentView.m; sourceTree = "<group>"; };
+		582C6E271ECDBEC5005216E4 /* SCSnapshotWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotWebView.h; sourceTree = "<group>"; };
+		582C6E281ECDBEC5005216E4 /* SCSnapshotWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotWebView.m; sourceTree = "<group>"; };
+		582C6E301ECDBFD2005216E4 /* SCContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContentViewController.h; sourceTree = "<group>"; };
+		582C6E311ECDBFD2005216E4 /* SCContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContentViewController.m; sourceTree = "<group>"; };
+		582C6E321ECDBFD2005216E4 /* SCContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCContentViewController.xib; sourceTree = "<group>"; };
+		582C6E331ECDBFD2005216E4 /* SCPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPreviewViewController.h; sourceTree = "<group>"; };
+		582C6E341ECDBFD2005216E4 /* SCPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPreviewViewController.m; sourceTree = "<group>"; };
+		582C6E351ECDBFD2005216E4 /* SCPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCPreviewViewController.xib; sourceTree = "<group>"; };
+		582C6E361ECDBFD2005216E4 /* SCURLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCURLViewController.h; sourceTree = "<group>"; };
+		582C6E371ECDBFD2005216E4 /* SCURLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCURLViewController.m; sourceTree = "<group>"; };
+		582C6E381ECDBFD2005216E4 /* SCURLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCURLViewController.xib; sourceTree = "<group>"; };
+		582C6E391ECDBFD2005216E4 /* SCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewController.h; sourceTree = "<group>"; };
+		582C6E3A1ECDBFD2005216E4 /* SCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewController.m; sourceTree = "<group>"; };
+		582C6E3B1ECDBFD2005216E4 /* SCWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCWebViewController.xib; sourceTree = "<group>"; };
+		582C6E441ECDC431005216E4 /* SCSnapshotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotModel.h; sourceTree = "<group>"; };
+		582C6E451ECDC783005216E4 /* SCSnapshotPostProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotPostProvider.h; sourceTree = "<group>"; };
+		582C6E461ECDC783005216E4 /* SCSnapshotPostProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotPostProvider.m; sourceTree = "<group>"; };
+		582C6E491ECDC836005216E4 /* SCSnapshotConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotConst.h; sourceTree = "<group>"; };
+		582C6E4A1ECDC970005216E4 /* SCSnapshotModelTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotModelTransformer.h; sourceTree = "<group>"; };
+		582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotModelTransformer.m; sourceTree = "<group>"; };
 		585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCSnapshotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585113CE1E7EBF950053AFBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		585113D01E7EBF950053AFBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,14 +78,6 @@
 		585113D91E7EBF950053AFBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		585113DC1E7EBF950053AFBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		585113DE1E7EBF950053AFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		585113E51E7EC2AD0053AFBB /* SCPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPreviewViewController.h; sourceTree = "<group>"; };
-		585113E61E7EC2AD0053AFBB /* SCPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPreviewViewController.m; sourceTree = "<group>"; };
-		58F6040A1EB0EB9500E81A55 /* SCContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContentViewController.h; sourceTree = "<group>"; };
-		58F6040B1EB0EB9500E81A55 /* SCContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContentViewController.m; sourceTree = "<group>"; };
-		58F6040C1EB0EB9500E81A55 /* SCContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCContentViewController.xib; sourceTree = "<group>"; };
-		58F6040F1EB0EBB400E81A55 /* SCURLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCURLViewController.h; sourceTree = "<group>"; };
-		58F604101EB0EBB400E81A55 /* SCURLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCURLViewController.m; sourceTree = "<group>"; };
-		58F604111EB0EBB400E81A55 /* SCURLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCURLViewController.xib; sourceTree = "<group>"; };
 		58F6042E1EB0F3F200E81A55 /* NSString+SCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCExtension.h"; sourceTree = "<group>"; };
 		58F6042F1EB0F3F200E81A55 /* NSString+SCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCExtension.m"; sourceTree = "<group>"; };
 		58F604301EB0F3F200E81A55 /* UIColor+SCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SCExtension.h"; sourceTree = "<group>"; };
@@ -66,20 +86,8 @@
 		58F604331EB0F3F200E81A55 /* UIImage+SCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SCExtension.m"; sourceTree = "<group>"; };
 		58F604341EB0F3F200E81A55 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		58F604351EB0F3F200E81A55 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
-		58F604371EB0F3F200E81A55 /* SCQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeGenerator.h; sourceTree = "<group>"; };
-		58F604381EB0F3F200E81A55 /* SCQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCQRCodeGenerator.m; sourceTree = "<group>"; };
-		58F604391EB0F3F200E81A55 /* SCSnapshotContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotContent.h; sourceTree = "<group>"; };
-		58F6043A1EB0F3F200E81A55 /* SCSnapshotContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotContent.m; sourceTree = "<group>"; };
-		58F6043B1EB0F3F200E81A55 /* SCSnapshotContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotContentView.h; sourceTree = "<group>"; };
-		58F6043C1EB0F3F200E81A55 /* SCSnapshotContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotContentView.m; sourceTree = "<group>"; };
-		58F6043D1EB0F3F200E81A55 /* SCSnapshotGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotGenerator.h; sourceTree = "<group>"; };
-		58F6043E1EB0F3F200E81A55 /* SCSnapshotGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotGenerator.m; sourceTree = "<group>"; };
-		58F6043F1EB0F3F200E81A55 /* SCSnapshotImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotImageDownloader.h; sourceTree = "<group>"; };
-		58F604401EB0F3F200E81A55 /* SCSnapshotImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotImageDownloader.m; sourceTree = "<group>"; };
 		58F604411EB0F3F200E81A55 /* SCSnapshotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotManager.h; sourceTree = "<group>"; };
 		58F604421EB0F3F200E81A55 /* SCSnapshotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotManager.m; sourceTree = "<group>"; };
-		58F604431EB0F3F200E81A55 /* SCSnapshotWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotWebView.h; sourceTree = "<group>"; };
-		58F604441EB0F3F200E81A55 /* SCSnapshotWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotWebView.m; sourceTree = "<group>"; };
 		A4938B8E35E9ADC5BA7874CE /* Pods-SCSnapshotDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCSnapshotDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCSnapshotDemo/Pods-SCSnapshotDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DBC506717A181EBC45BB749A /* libPods-SCSnapshotDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SCSnapshotDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4C822F41D4DD76FDBF5135 /* Pods-SCSnapshotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCSnapshotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCSnapshotDemo/Pods-SCSnapshotDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +112,70 @@
 				FB4C822F41D4DD76FDBF5135 /* Pods-SCSnapshotDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		582C6E191ECDBEC5005216E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				582C6E441ECDC431005216E4 /* SCSnapshotModel.h */,
+				582C6E1A1ECDBEC5005216E4 /* SCSnapshotPostContent.h */,
+				582C6E1B1ECDBEC5005216E4 /* SCSnapshotPostContent.m */,
+				582C6E4A1ECDC970005216E4 /* SCSnapshotModelTransformer.h */,
+				582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		582C6E1C1ECDBEC5005216E4 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				582C6E451ECDC783005216E4 /* SCSnapshotPostProvider.h */,
+				582C6E461ECDC783005216E4 /* SCSnapshotPostProvider.m */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		582C6E1D1ECDBEC5005216E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				582C6E1E1ECDBEC5005216E4 /* SCQRCodeGenerator.h */,
+				582C6E1F1ECDBEC5005216E4 /* SCQRCodeGenerator.m */,
+				582C6E201ECDBEC5005216E4 /* SCSnapshotGenerator.h */,
+				582C6E211ECDBEC5005216E4 /* SCSnapshotGenerator.m */,
+				582C6E221ECDBEC5005216E4 /* SCSnapshotImageDownloader.h */,
+				582C6E231ECDBEC5005216E4 /* SCSnapshotImageDownloader.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		582C6E241ECDBEC5005216E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				582C6E251ECDBEC5005216E4 /* SCSnapshotPostContentView.h */,
+				582C6E261ECDBEC5005216E4 /* SCSnapshotPostContentView.m */,
+				582C6E271ECDBEC5005216E4 /* SCSnapshotWebView.h */,
+				582C6E281ECDBEC5005216E4 /* SCSnapshotWebView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		582C6E2F1ECDBFD2005216E4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				582C6E301ECDBFD2005216E4 /* SCContentViewController.h */,
+				582C6E311ECDBFD2005216E4 /* SCContentViewController.m */,
+				582C6E321ECDBFD2005216E4 /* SCContentViewController.xib */,
+				582C6E331ECDBFD2005216E4 /* SCPreviewViewController.h */,
+				582C6E341ECDBFD2005216E4 /* SCPreviewViewController.m */,
+				582C6E351ECDBFD2005216E4 /* SCPreviewViewController.xib */,
+				582C6E361ECDBFD2005216E4 /* SCURLViewController.h */,
+				582C6E371ECDBFD2005216E4 /* SCURLViewController.m */,
+				582C6E381ECDBFD2005216E4 /* SCURLViewController.xib */,
+				582C6E391ECDBFD2005216E4 /* SCWebViewController.h */,
+				582C6E3A1ECDBFD2005216E4 /* SCWebViewController.m */,
+				582C6E3B1ECDBFD2005216E4 /* SCWebViewController.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		585113C11E7EBF950053AFBB = {
@@ -132,18 +204,7 @@
 				585113D11E7EBF950053AFBB /* AppDelegate.m */,
 				585113D31E7EBF950053AFBB /* ViewController.h */,
 				585113D41E7EBF950053AFBB /* ViewController.m */,
-				58F6040A1EB0EB9500E81A55 /* SCContentViewController.h */,
-				58F6040B1EB0EB9500E81A55 /* SCContentViewController.m */,
-				58F6040C1EB0EB9500E81A55 /* SCContentViewController.xib */,
-				58F6040F1EB0EBB400E81A55 /* SCURLViewController.h */,
-				58F604101EB0EBB400E81A55 /* SCURLViewController.m */,
-				58F604111EB0EBB400E81A55 /* SCURLViewController.xib */,
-				585113E51E7EC2AD0053AFBB /* SCPreviewViewController.h */,
-				585113E61E7EC2AD0053AFBB /* SCPreviewViewController.m */,
-				581F03F91EB0BA51004292F7 /* SCPreviewViewController.xib */,
-				581F03F01EB09238004292F7 /* SCWebViewController.h */,
-				581F03F11EB09238004292F7 /* SCWebViewController.m */,
-				581F03F21EB09238004292F7 /* SCWebViewController.xib */,
+				582C6E2F1ECDBFD2005216E4 /* Controllers */,
 				585113D61E7EBF950053AFBB /* Main.storyboard */,
 				585113D91E7EBF950053AFBB /* Assets.xcassets */,
 				585113DB1E7EBF950053AFBB /* LaunchScreen.storyboard */,
@@ -188,20 +249,13 @@
 		58F604361EB0F3F200E81A55 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				58F604371EB0F3F200E81A55 /* SCQRCodeGenerator.h */,
-				58F604381EB0F3F200E81A55 /* SCQRCodeGenerator.m */,
-				58F604391EB0F3F200E81A55 /* SCSnapshotContent.h */,
-				58F6043A1EB0F3F200E81A55 /* SCSnapshotContent.m */,
-				58F6043B1EB0F3F200E81A55 /* SCSnapshotContentView.h */,
-				58F6043C1EB0F3F200E81A55 /* SCSnapshotContentView.m */,
-				58F6043D1EB0F3F200E81A55 /* SCSnapshotGenerator.h */,
-				58F6043E1EB0F3F200E81A55 /* SCSnapshotGenerator.m */,
-				58F6043F1EB0F3F200E81A55 /* SCSnapshotImageDownloader.h */,
-				58F604401EB0F3F200E81A55 /* SCSnapshotImageDownloader.m */,
+				582C6E491ECDC836005216E4 /* SCSnapshotConst.h */,
 				58F604411EB0F3F200E81A55 /* SCSnapshotManager.h */,
 				58F604421EB0F3F200E81A55 /* SCSnapshotManager.m */,
-				58F604431EB0F3F200E81A55 /* SCSnapshotWebView.h */,
-				58F604441EB0F3F200E81A55 /* SCSnapshotWebView.m */,
+				582C6E191ECDBEC5005216E4 /* Models */,
+				582C6E1C1ECDBEC5005216E4 /* Providers */,
+				582C6E1D1ECDBEC5005216E4 /* Utils */,
+				582C6E241ECDBEC5005216E4 /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -277,13 +331,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582C6E3F1ECDBFD2005216E4 /* SCPreviewViewController.xib in Resources */,
 				585113DD1E7EBF950053AFBB /* LaunchScreen.storyboard in Resources */,
-				58F604131EB0EBB400E81A55 /* SCURLViewController.xib in Resources */,
 				585113DA1E7EBF950053AFBB /* Assets.xcassets in Resources */,
-				58F6040E1EB0EB9500E81A55 /* SCContentViewController.xib in Resources */,
-				581F03FA1EB0BA51004292F7 /* SCPreviewViewController.xib in Resources */,
-				581F03F41EB09238004292F7 /* SCWebViewController.xib in Resources */,
+				582C6E3D1ECDBFD2005216E4 /* SCContentViewController.xib in Resources */,
+				582C6E411ECDBFD2005216E4 /* SCURLViewController.xib in Resources */,
 				585113D81E7EBF950053AFBB /* Main.storyboard in Resources */,
+				582C6E431ECDBFD2005216E4 /* SCWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,24 +396,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58F6045C1EB0F3F300E81A55 /* SCSnapshotImageDownloader.m in Sources */,
-				58F604121EB0EBB400E81A55 /* SCURLViewController.m in Sources */,
+				582C6E2B1ECDBEC5005216E4 /* SCSnapshotGenerator.m in Sources */,
 				585113D51E7EBF950053AFBB /* ViewController.m in Sources */,
-				581F03F31EB09238004292F7 /* SCWebViewController.m in Sources */,
+				582C6E401ECDBFD2005216E4 /* SCURLViewController.m in Sources */,
+				582C6E3C1ECDBFD2005216E4 /* SCContentViewController.m in Sources */,
 				58F604561EB0F3F300E81A55 /* UIImage+SCExtension.m in Sources */,
-				58F6045B1EB0F3F300E81A55 /* SCSnapshotGenerator.m in Sources */,
-				58F604581EB0F3F300E81A55 /* SCQRCodeGenerator.m in Sources */,
+				582C6E4C1ECDC970005216E4 /* SCSnapshotModelTransformer.m in Sources */,
 				58F604541EB0F3F300E81A55 /* NSString+SCExtension.m in Sources */,
+				582C6E2A1ECDBEC5005216E4 /* SCQRCodeGenerator.m in Sources */,
 				585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */,
-				58F6045E1EB0F3F300E81A55 /* SCSnapshotWebView.m in Sources */,
+				582C6E471ECDC783005216E4 /* SCSnapshotPostProvider.m in Sources */,
 				585113CF1E7EBF950053AFBB /* main.m in Sources */,
-				58F6045A1EB0F3F300E81A55 /* SCSnapshotContentView.m in Sources */,
+				582C6E2D1ECDBEC5005216E4 /* SCSnapshotPostContentView.m in Sources */,
 				58F604551EB0F3F300E81A55 /* UIColor+SCExtension.m in Sources */,
-				58F6040D1EB0EB9500E81A55 /* SCContentViewController.m in Sources */,
 				58F604571EB0F3F300E81A55 /* UIView+Layout.m in Sources */,
-				585113E81E7EC2AD0053AFBB /* SCPreviewViewController.m in Sources */,
-				58F604591EB0F3F300E81A55 /* SCSnapshotContent.m in Sources */,
 				58F6045D1EB0F3F300E81A55 /* SCSnapshotManager.m in Sources */,
+				582C6E2E1ECDBEC5005216E4 /* SCSnapshotWebView.m in Sources */,
+				582C6E2C1ECDBEC5005216E4 /* SCSnapshotImageDownloader.m in Sources */,
+				582C6E291ECDBEC5005216E4 /* SCSnapshotPostContent.m in Sources */,
+				582C6E3E1ECDBFD2005216E4 /* SCPreviewViewController.m in Sources */,
+				582C6E421ECDBFD2005216E4 /* SCWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

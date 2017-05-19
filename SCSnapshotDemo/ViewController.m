@@ -26,9 +26,9 @@ static NSString * const kCellPropertyControllerKey = @"controller";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.cellProperties = @[@{kCellPropertyTitleKey : @"Snapshot from custom view",
+    self.cellProperties = @[@{kCellPropertyTitleKey : @"Generate from custom view 1",
                               kCellPropertyControllerKey : @"SCContentViewController"},
-                            @{kCellPropertyTitleKey : @"Snapshot from web view",
+                            @{kCellPropertyTitleKey : @"Generate from web view",
                               kCellPropertyControllerKey : @"SCURLViewController"}
                         ];
     

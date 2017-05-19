@@ -7,40 +7,33 @@
 //
 
 #import "SCSnapshotManager.h"
+#import "SCSnapshotConst.h"
 
 #import "SCSnapshotWebView.h"
 
 // Model
-#import "SCSnapshotContent.h"
+#import "SCSnapshotPostContent.h"
 
 // Components
 #import "SCQRCodeGenerator.h"
 #import "SCSnapshotImageDownloader.h"
-#import "SCSnapshotContentView.h"
+#import "SCSnapshotPostContentView.h"
 #import "SCSnapshotGenerator.h"
 
 #import <MBProgressHUD.h>
 
 #import "UIView+Layout.h"
 
-#define UIApplicationKeyWindow   [UIApplication sharedApplication].keyWindow
-
-#ifndef SCSnapshotBlockCallback
-#define SCSnapshotBlockCallback(__BLOCK_NAME__, ...)   \
-if (__BLOCK_NAME__) {\
-__BLOCK_NAME__(__VA_ARGS__);\
-}
-#endif
+#import "SCSnapshotPostProvider.h"
 
 
-static NSUInteger const kSnapshotImageDataLengthMax = 4 * 1024 * 1024; // 最大 4 M
-static NSString * const kSnapshotFailureMessage = @"快照生成失败，请重新生成!";
 
 
 @interface SCSnapshotManager ()
 
-@property (strong, nonatomic) SCSnapshotContent *content;
-@property (strong, nonatomic) SCSnapshotWebView *webView; 
+
+@property (strong, nonatomic) SCSnapshotWebView *webView;
+@property (strong, nonatomic) id <SCSnapshotProviderProtocol> provider;
 
 @end
 
@@ -63,75 +56,140 @@ static NSString * const kSnapshotFailureMessage = @"快照生成失败，请重�
 #pragma mark - Main Logic
 
 // 根据 content 生成快照
-+ (void)generateSnapshotWithContent:(SCSnapshotContent *)content completionHander:(nullable SCSnapshotCompletionHander)completionHander{
-    SCSnapshotManager *snapshotManager = [SCSnapshotManager sharedManager];
-    [snapshotManager generateSnapshotWithContent:content completionHander:completionHander];
++ (void)shareSnapshotWithModel:(id)model completionHandler:(SCSnapshotCompletionHandler)completionHandler {
+    
+    SCSnapshotManager *manager = [[SCSnapshotManager alloc] init];
+    
+    // 1. 生成快照
+    [manager generateSnapshotWithModel:model completionHandler:^(UIImage * _Nullable snapshot, NSError * _Nullable error) {
+        
+        if (error == nil && snapshot != nil) {
+            
+            
+            // 2. 分享
+//            [SCShareManager shareWithShareType:SSDKPlatformSubTypeWechatTimeline image:image text:nil success:^{
+//                // MARK: 这里为什么不用 __weak？如果用 weak，block 不会持有 manager，manager 在这个函数执行完，manager 不被任何对象持有，所以马上就销毁了，等到 block 回调时，manager 为 nil。 （block 作为函数参数的情况）
+//                if ([manager.provider respondsToSelector:@selector(snapshotManager:didFinishSharingSnapshot:)]) {
+//                    [manager.provider snapshotManager:manager didFinishSharingSnapshot:YES];
+//                }
+//                
+//                SCSnapshotBlockCallback(completionHandler, nil, image);
+//                
+//            } failture:^{
+//                NSError *shareError = [NSError errorWithDomain:SCSnapshotErrorDomain
+//                                                          code:SCSnapshotSharingFailedError
+//                                                      userInfo:@{@"ShareType" : @"SSDKPlatformSubTypeWechatTimeline",
+//                                                                 @"image" : image}];
+//                SCSnapshotBlockCallback(completionHandler, shareError, image);
+//                [SCCoreUtil showHUDMessageInWindow:kSnapshotShareFailureMessage];  // 提示分享照片失败
+//                
+//                [SCBugReporter reportError:shareError withType:SCBugReporterErrorTypeSnapshot];
+//            } cancel:^{
+//                // 取消则不作任何处理...
+//            }];
+            
+        } else {
+            SCSnapshotBlockCallback(completionHandler, nil, error);
+        }
+        
+    }];
 }
 
-/// 根据 h5 的 url 生成快照
-- (void)generateSnapshotWithContent:(SCSnapshotContent *)content completionHander:(nullable SCSnapshotCompletionHander)completionHander {
-    self.content = content;
+
+- (void)generateSnapshotWithModel:(id)model completionHandler:(SCSnapshotCompletionHandler)completionHandler {
     
+    // 1. 创建 provider
+    if ([model isKindOfClass:[SCBookDetailItem class]]) { // 商户详情
+        self.provider = [[SCSnapshot alloc] init];
+        
+    } else { // 图文详情
+        self.provider = [[SCSnapshotPostProvider alloc] init];
+    }
     
-    // 加载 loading
-    [MBProgressHUD showHUDAddedTo:UIApplicationKeyWindow animated:YES];
+    // 2. 转换 content
+    id <SCSnapshotModel> content = [self.provider snapshotContentWithModel:model];
     
-    if (!content.shareUrl || ![content.shareUrl isKindOfClass:[NSString class]]) {
-        SCSnapshotBlockCallback(completionHander,
-                                nil,
-                                [NSError errorWithDomain:@"com.scsnapshot.shareurl.error" code:103 userInfo:nil]);
+    if (content == nil) {
+        NSError *modelError = [NSError errorWithDomain:SCSnapshotErrorDomain
+                                                  code:SCSnapshotContentEmptyError
+                                              userInfo:nil];
+        SCSnapshotBlockCallback(completionHandler, modelError, nil);
+        [SCCoreUtil showHUDMessageInWindow:kSnapshotGenerateFailureMessage]; // 提示生成照片失败
         return;
     }
     
+    // 3. 埋点
+    if ([self.provider respondsToSelector:@selector(trackEventWithContent:behavior:)]) {
+        [self.provider trackEventWithContent:content behavior:behavior];
+    }
     
+    // 4. 加载 loading
+    SCHourglassLoadingView *loadingView = [[SCHourglassLoadingView alloc] init];
+    loadingView.message = kSnapshotGenerateLoadingMessage;
+    [kSCKeyWindow addSubview:loadingView];
+    [loadingView startAnimating];
     
-    // 生成二维码
-    self.content.qrCodeImage = [SCQRCodeGenerator generateQRCodeImageWithString:self.content.shareUrl size:CGSizeMake(POINT_FROM_PIXEL(220), POINT_FROM_PIXEL(220))];
+    // 5. 生成二维码
+    content.qrCodeImage = [SCQRCodeTool generateQRCodeImageWithString:content.shareUrl size:CGSizeMake(POINT_FROM_PIXEL(220), POINT_FROM_PIXEL(220))];
+    if (content.qrCodeImage == nil) {
+        NSError *qrCodeImageError = [NSError errorWithDomain:SCSnapshotErrorDomain
+                                                        code:SCSnapshotQRCodeGeneratingFailedError
+                                                    userInfo:@{@"shareUrl" : content.shareUrl ? : @""}];
+        [SCBugReporter reportError:qrCodeImageError withType:SCBugReporterErrorTypeSnapshot];
+    }
     
-    // 2. 下载图片
+    // 6. 下载图片
     SCSnapshotImageDownloader *imageDownloader = [[SCSnapshotImageDownloader alloc] init];
-    [imageDownloader downloadWithAvatarURLString:self.content.posterAvatarURLString
-                                 photoURLStrings:self.content.picUrls
-                               completionHandler:^(UIImage * _Nullable avatar, NSArray<UIImage *> * _Nullable photos, BOOL success) {
-                                   
-                                   // 停止 loading 动画
-                                   [MBProgressHUD hideHUDForView:UIApplicationKeyWindow animated:YES];
-                                   
-                                   if (!success) {
-                                       SCSnapshotBlockCallback(completionHander, nil, [NSError errorWithDomain:@"com.scsnapshot.download.error" code:100 userInfo:nil]);
-                                   } else {
-                                       self.content.posterAvatarImage = avatar;
-                                       self.content.downloadedImages = photos;
-                                       
-                                       // 创建 view、排版内容
-                                       SCSnapshotContentView *contentView = [[SCSnapshotContentView alloc] initWithContent:self.content];
-                                       
-                                       // 生成图片
-                                       UIImage *snapshot = [SCSnapshotGenerator generateSnapshotWithView:contentView maxDataLength:kSnapshotImageDataLengthMax];
-                                       
-                                       // 回调
-                                       SCSnapshotBlockCallback(completionHander, snapshot, nil);
-                                       
-                                   }
-                               }];
-
+    [imageDownloader downloadWithImageURLArrays:[self.provider imageURLsForDownloadingWithContent:content]
+                              completionHandler:^(NSArray<NSArray<UIImage *> *> * _Nullable imageArrays, BOOL success) {
+                                  
+                                  // 停止动画
+                                  [loadingView stopAnimating];
+                                  
+                                  if (success == NO) {
+                                      NSError *downloadError = [NSError errorWithDomain:SCSnapshotErrorDomain
+                                                                                   code:SCSnapshotImageDownloadingFailedError
+                                                                               userInfo:nil];
+                                      SCSnapshotBlockCallback(completionHandler, downloadError, nil);
+                                  } else {
+                                      // 7. 创建 view、排版内容
+                                      __kindof UIView * contentView = [self.provider snapshotViewWithDowloadedImages:imageArrays content:content];
+                                      
+                                      if (contentView) {
+                                          // 8. 生成快照
+                                          UIImage *snapshot = [SCSnapshotGenerator generateSnapshotWithView:contentView maxDataLength:kSnapshotImageDataLengthMax];
+                                          
+                                          // 9. 回调
+                                          SCSnapshotBlockCallback(completionHandler, nil, snapshot);
+                                          
+                                      } else {
+                                          NSError *viewError = [NSError errorWithDomain:SCSnapshotErrorDomain
+                                                                                   code:SCSnapshotViewGeneratingFailedError
+                                                                               userInfo:nil];
+                                          SCSnapshotBlockCallback(completionHandler, viewError, nil);
+                                      }
+                                      
+                                  }
+                              }];
+    
 }
 
+
 /// 根据 h5 的 url 生成快照
-+ (void)generateSnapshotWithURLString:(NSString *)urlString completionHander:(SCSnapshotCompletionHander)completionHander {
++ (void)generateSnapshotWithURLString:(NSString *)urlString completionHandler:(SCSnapshotcompletionHandler)completionHandler {
     SCSnapshotManager *snapshotManager = [SCSnapshotManager sharedManager];
-    [snapshotManager generateSnapshotWithURLString:urlString completionHander:completionHander];
+    [snapshotManager generateSnapshotWithURLString:urlString completionHandler:completionHandler];
 }
 
 
 /// 根据 h5 的 url 生成快照
-- (void)generateSnapshotWithURLString:(NSString *)urlString completionHander:(SCSnapshotCompletionHander)completionHander {
+- (void)generateSnapshotWithURLString:(NSString *)urlString completionHandler:(SCSnapshotcompletionHandler)completionHandler {
     
     // 加载 loading
     [MBProgressHUD showHUDAddedTo:UIApplicationKeyWindow animated:YES];
     
     if (!urlString.length || ![urlString isKindOfClass:[NSString class]]) {
-        SCSnapshotBlockCallback(completionHander,
+        SCSnapshotBlockCallback(completionHandler,
                                 nil,
                                 [NSError errorWithDomain:@"com.scsnapshot.url.error" code:101 userInfo:nil]);
         return;
@@ -152,7 +210,7 @@ static NSString * const kSnapshotFailureMessage = @"快照生成失败，请重�
         [MBProgressHUD hideHUDForView:UIApplicationKeyWindow animated:YES];
         
         if (error) {
-            SCSnapshotBlockCallback(completionHander, nil, error);
+            SCSnapshotBlockCallback(completionHandler, nil, error);
         } else {
             
             // 更新尺寸
@@ -167,7 +225,7 @@ static NSString * const kSnapshotFailureMessage = @"快照生成失败，请重�
             weakSelf.webView = nil;
             
             // 回调
-            SCSnapshotBlockCallback(completionHander, snapshot, nil);
+            SCSnapshotBlockCallback(completionHandler, snapshot, nil);
             
         }
     };

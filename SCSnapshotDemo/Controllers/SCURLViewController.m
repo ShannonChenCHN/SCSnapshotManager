@@ -45,7 +45,8 @@
         return;
     }
     
-    [SCSnapshotManager generateSnapshotWithURLString:self.textField.text completionHander:^(UIImage * _Nullable snapshot, NSError * _Nullable error) {
+    [SCSnapshotManager generateSnapshotWithURLString:self.textField.text completionHandler:^(UIImage * _Nullable snapshot, NSError * _Nullable error) {
+    
         if (!error) {
             SCPreviewViewController *controller = [[SCPreviewViewController alloc] initWithSnapshot:snapshot];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];

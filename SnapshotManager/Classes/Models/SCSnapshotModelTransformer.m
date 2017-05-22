@@ -8,12 +8,29 @@
 
 #import "SCSnapshotModelTransformer.h"
 
+#import "SCSnapshotPostContent.h"
+#import "SCSnapshotMerchantContent.h"
+
 @implementation SCSnapshotModelTransformer
 
 + (id<SCSnapshotModel>)transformModel:(id)model {
+    // TODO:
     if ([model isKindOfClass:[NSDictionary class]]) {
-        // TODO:
+        
+        if ([model[@"type"] integerValue] == SCSnapshotModelTypePost) {
+            
+            return [SCSnapshotPostContent defaultContent];
+            
+        } else if ([model[@"type"] integerValue] == SCSnapshotModelTypeMerchant) {
+            
+            return [SCSnapshotMerchantContent defaultContent];
+            
+        }
+        
+        
     }
+    
+    return nil;
 }
 
 @end

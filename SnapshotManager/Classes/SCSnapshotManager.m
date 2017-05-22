@@ -9,24 +9,19 @@
 #import "SCSnapshotManager.h"
 #import "SCSnapshotConst.h"
 
-#import "SCSnapshotWebView.h"
-
-// Model
-#import "SCSnapshotPostContent.h"
 
 // Components
+#import "SCSnapshotPostProvider.h"
 #import "SCQRCodeGenerator.h"
 #import "SCSnapshotImageDownloader.h"
-#import "SCSnapshotPostContentView.h"
 #import "SCSnapshotGenerator.h"
-
 #import <MBProgressHUD.h>
 
+// View
+#import "SCSnapshotWebView.h"
+
+// Helper
 #import "UIView+Layout.h"
-
-#import "SCSnapshotPostProvider.h"
-
-
 
 
 @interface SCSnapshotManager ()
@@ -65,7 +60,7 @@
         
         if (error == nil && snapshot != nil) {
             
-            
+            SCSnapshotBlockCallback(completionHandler, snapshot, nil);
             // 2. 分享
 //            [SCShareManager shareWithShareType:SSDKPlatformSubTypeWechatTimeline image:image text:nil success:^{
 //                // MARK: 这里为什么不用 __weak？如果用 weak，block 不会持有 manager，manager 在这个函数执行完，manager 不被任何对象持有，所以马上就销毁了，等到 block 回调时，manager 为 nil。 （block 作为函数参数的情况）
@@ -99,12 +94,7 @@
 - (void)generateSnapshotWithModel:(id)model completionHandler:(SCSnapshotCompletionHandler)completionHandler {
     
     // 1. 创建 provider
-    if ([model isKindOfClass:[SCBookDetailItem class]]) { // 商户详情
-        self.provider = [[SCSnapshot alloc] init];
-        
-    } else { // 图文详情
-        self.provider = [[SCSnapshotPostProvider alloc] init];
-    }
+    self.provider = [[SCSnapshotPostProvider alloc] init];
     
     // 2. 转换 content
     id <SCSnapshotModel> content = [self.provider snapshotContentWithModel:model];
@@ -113,29 +103,22 @@
         NSError *modelError = [NSError errorWithDomain:SCSnapshotErrorDomain
                                                   code:SCSnapshotContentEmptyError
                                               userInfo:nil];
-        SCSnapshotBlockCallback(completionHandler, modelError, nil);
-        [SCCoreUtil showHUDMessageInWindow:kSnapshotGenerateFailureMessage]; // 提示生成照片失败
+        SCSnapshotBlockCallback(completionHandler, nil, modelError);
+
         return;
     }
     
-    // 3. 埋点
-    if ([self.provider respondsToSelector:@selector(trackEventWithContent:behavior:)]) {
-        [self.provider trackEventWithContent:content behavior:behavior];
-    }
     
-    // 4. 加载 loading
-    SCHourglassLoadingView *loadingView = [[SCHourglassLoadingView alloc] init];
-    loadingView.message = kSnapshotGenerateLoadingMessage;
-    [kSCKeyWindow addSubview:loadingView];
-    [loadingView startAnimating];
+    // 3. 加载 loading
+    [MBProgressHUD showHUDAddedTo:UIApplicationKeyWindow animated:YES];
     
     // 5. 生成二维码
-    content.qrCodeImage = [SCQRCodeTool generateQRCodeImageWithString:content.shareUrl size:CGSizeMake(POINT_FROM_PIXEL(220), POINT_FROM_PIXEL(220))];
+    content.qrCodeImage = [SCQRCodeGenerator generateQRCodeImageWithString:content.shareUrl size:CGSizeMake(POINT_FROM_PIXEL(220), POINT_FROM_PIXEL(220))];
     if (content.qrCodeImage == nil) {
         NSError *qrCodeImageError = [NSError errorWithDomain:SCSnapshotErrorDomain
                                                         code:SCSnapshotQRCodeGeneratingFailedError
                                                     userInfo:@{@"shareUrl" : content.shareUrl ? : @""}];
-        [SCBugReporter reportError:qrCodeImageError withType:SCBugReporterErrorTypeSnapshot];
+        
     }
     
     // 6. 下载图片
@@ -143,14 +126,15 @@
     [imageDownloader downloadWithImageURLArrays:[self.provider imageURLsForDownloadingWithContent:content]
                               completionHandler:^(NSArray<NSArray<UIImage *> *> * _Nullable imageArrays, BOOL success) {
                                   
-                                  // 停止动画
-                                  [loadingView stopAnimating];
+                                  // 停止 loading
+                                  [MBProgressHUD hideHUDForView:UIApplicationKeyWindow animated:YES];
                                   
                                   if (success == NO) {
                                       NSError *downloadError = [NSError errorWithDomain:SCSnapshotErrorDomain
                                                                                    code:SCSnapshotImageDownloadingFailedError
                                                                                userInfo:nil];
-                                      SCSnapshotBlockCallback(completionHandler, downloadError, nil);
+                                      SCSnapshotBlockCallback(completionHandler, nil, downloadError);
+                                      
                                   } else {
                                       // 7. 创建 view、排版内容
                                       __kindof UIView * contentView = [self.provider snapshotViewWithDowloadedImages:imageArrays content:content];
@@ -160,13 +144,13 @@
                                           UIImage *snapshot = [SCSnapshotGenerator generateSnapshotWithView:contentView maxDataLength:kSnapshotImageDataLengthMax];
                                           
                                           // 9. 回调
-                                          SCSnapshotBlockCallback(completionHandler, nil, snapshot);
+                                          SCSnapshotBlockCallback(completionHandler, snapshot, nil);
                                           
                                       } else {
                                           NSError *viewError = [NSError errorWithDomain:SCSnapshotErrorDomain
                                                                                    code:SCSnapshotViewGeneratingFailedError
                                                                                userInfo:nil];
-                                          SCSnapshotBlockCallback(completionHandler, viewError, nil);
+                                          SCSnapshotBlockCallback(completionHandler, nil, viewError);
                                       }
                                       
                                   }
@@ -176,14 +160,14 @@
 
 
 /// 根据 h5 的 url 生成快照
-+ (void)generateSnapshotWithURLString:(NSString *)urlString completionHandler:(SCSnapshotcompletionHandler)completionHandler {
++ (void)generateSnapshotWithURLString:(NSString *)urlString completionHandler:(SCSnapshotCompletionHandler)completionHandler {
     SCSnapshotManager *snapshotManager = [SCSnapshotManager sharedManager];
     [snapshotManager generateSnapshotWithURLString:urlString completionHandler:completionHandler];
 }
 
 
 /// 根据 h5 的 url 生成快照
-- (void)generateSnapshotWithURLString:(NSString *)urlString completionHandler:(SCSnapshotcompletionHandler)completionHandler {
+- (void)generateSnapshotWithURLString:(NSString *)urlString completionHandler:(SCSnapshotCompletionHandler)completionHandler {
     
     // 加载 loading
     [MBProgressHUD showHUDAddedTo:UIApplicationKeyWindow animated:YES];

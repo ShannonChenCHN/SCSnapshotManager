@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCSnapshotModel.h"
+
 
 @interface SCContentViewController : UIViewController
+
+@property (assign, nonatomic) SCSnapshotModelType modelType;
 
 @end

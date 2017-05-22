@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SCSnapshotModel.h"
 
-#define kSingleImageHWRatioMax   2.0  // 最大高宽比
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- 生成快照的数据模型
+ 生成图文帖子快照的数据模型
  */
 @interface SCSnapshotPostContent : NSObject <SCSnapshotModel>
 

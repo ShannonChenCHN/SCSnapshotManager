@@ -23,6 +23,7 @@
 		582C6E431ECDBFD2005216E4 /* SCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C6E3B1ECDBFD2005216E4 /* SCWebViewController.xib */; };
 		582C6E471ECDC783005216E4 /* SCSnapshotPostProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E461ECDC783005216E4 /* SCSnapshotPostProvider.m */; };
 		582C6E4C1ECDC970005216E4 /* SCSnapshotModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */; };
+		583C4E921ED33C5800361B4A /* SCSnapshotMerchantContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 583C4E911ED33C5800361B4A /* SCSnapshotMerchantContent.m */; };
 		585113CF1E7EBF950053AFBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113CE1E7EBF950053AFBB /* main.m */; };
 		585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D11E7EBF950053AFBB /* AppDelegate.m */; };
 		585113D51E7EBF950053AFBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D41E7EBF950053AFBB /* ViewController.m */; };
@@ -68,6 +69,8 @@
 		582C6E491ECDC836005216E4 /* SCSnapshotConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotConst.h; sourceTree = "<group>"; };
 		582C6E4A1ECDC970005216E4 /* SCSnapshotModelTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotModelTransformer.h; sourceTree = "<group>"; };
 		582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotModelTransformer.m; sourceTree = "<group>"; };
+		583C4E901ED33C5800361B4A /* SCSnapshotMerchantContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotMerchantContent.h; sourceTree = "<group>"; };
+		583C4E911ED33C5800361B4A /* SCSnapshotMerchantContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotMerchantContent.m; sourceTree = "<group>"; };
 		585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCSnapshotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585113CE1E7EBF950053AFBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		585113D01E7EBF950053AFBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				582C6E441ECDC431005216E4 /* SCSnapshotModel.h */,
 				582C6E1A1ECDBEC5005216E4 /* SCSnapshotPostContent.h */,
 				582C6E1B1ECDBEC5005216E4 /* SCSnapshotPostContent.m */,
+				583C4E901ED33C5800361B4A /* SCSnapshotMerchantContent.h */,
+				583C4E911ED33C5800361B4A /* SCSnapshotMerchantContent.m */,
 				582C6E4A1ECDC970005216E4 /* SCSnapshotModelTransformer.h */,
 				582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */,
 			);
@@ -403,6 +408,7 @@
 				58F604561EB0F3F300E81A55 /* UIImage+SCExtension.m in Sources */,
 				582C6E4C1ECDC970005216E4 /* SCSnapshotModelTransformer.m in Sources */,
 				58F604541EB0F3F300E81A55 /* NSString+SCExtension.m in Sources */,
+				583C4E921ED33C5800361B4A /* SCSnapshotMerchantContent.m in Sources */,
 				582C6E2A1ECDBEC5005216E4 /* SCQRCodeGenerator.m in Sources */,
 				585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */,
 				582C6E471ECDC783005216E4 /* SCSnapshotPostProvider.m in Sources */,

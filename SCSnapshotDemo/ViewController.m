@@ -13,6 +13,7 @@
 
 static NSString * const kCellPropertyTitleKey = @"title";
 static NSString * const kCellPropertyControllerKey = @"controller";
+static NSString * const kCellPropertyModelTypeKey = @"modelType";
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
     
@@ -26,8 +27,12 @@ static NSString * const kCellPropertyControllerKey = @"controller";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.cellProperties = @[@{kCellPropertyTitleKey : @"Generate from custom view 1",
-                              kCellPropertyControllerKey : @"SCContentViewController"},
+    self.cellProperties = @[@{kCellPropertyTitleKey : @"Generate from post model",
+                              kCellPropertyControllerKey : @"SCContentViewController",
+                              kCellPropertyModelTypeKey : @(SCSnapshotModelTypePost)},
+                            @{kCellPropertyTitleKey : @"Generate from merchant model",
+                              kCellPropertyControllerKey : @"SCContentViewController",
+                              kCellPropertyModelTypeKey : @(SCSnapshotModelTypeMerchant)},
                             @{kCellPropertyTitleKey : @"Generate from web view",
                               kCellPropertyControllerKey : @"SCURLViewController"}
                         ];
@@ -71,7 +76,13 @@ static NSString * const kCellPropertyControllerKey = @"controller";
     NSString *className = self.cellProperties[indexPath.row][kCellPropertyControllerKey];
     
     if (className && NSClassFromString(className)) {
-        [self.navigationController pushViewController:[NSClassFromString(className) new] animated:YES];
+        UIViewController *controller = [NSClassFromString(className) new];
+        if ([controller isKindOfClass:[SCContentViewController class]]) {
+            SCContentViewController *contentViewController = (SCContentViewController *)controller;
+            contentViewController.modelType = [self.cellProperties[indexPath.row][kCellPropertyModelTypeKey] integerValue];
+        }
+        
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 @class SCSnapshotPostContent;
 
-#define POINT_FROM_PIXEL(__VALUE_IN_POINT__)    (__VALUE_IN_POINT__ / [UIScreen mainScreen].scale)
-
-
 
 NS_ASSUME_NONNULL_BEGIN
 

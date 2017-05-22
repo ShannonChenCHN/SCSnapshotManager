@@ -7,6 +7,7 @@
 //
 
 #import "SCSnapshotPostContentView.h"
+#import "SCSnapshotConst.h"
 
 #import "SCSnapshotPostContent.h"
 
@@ -14,19 +15,7 @@
 #import "UIColor+SCExtension.h"
 #import "NSString+SCExtension.h"
 
-
-#define kSnapshotWidth                          POINT_FROM_PIXEL(640.0)
-#define kLeftRightPadding                       POINT_FROM_PIXEL(43)
-
-#define kTitleViewHeight                        POINT_FROM_PIXEL(180)
-#define kContentWidth                           POINT_FROM_PIXEL(552)
 #define kAvatarWH                               POINT_FROM_PIXEL(90)
-#define kQRCodeWH                               POINT_FROM_PIXEL(204)
-#define kShareDescLabelWidth                    POINT_FROM_PIXEL(350)
-#define ImageViewHeightFor(__IMGAE__)           (kContentWidth * __IMGAE__.size.height / __IMGAE__.size.width)
-#define ImageViewLimitedHeightFor(__IMGAE__)    (ImageViewHeightFor(__IMGAE__) > kContentWidth * kSingleImageHWRatioMax ?\
-                                                                                 kContentWidth * kSingleImageHWRatioMax :\
-                                                                                 ImageViewHeightFor(__IMGAE__))  //  限制图片高宽比
 
 /**
  图文按钮（上图下文）

@@ -44,9 +44,6 @@ typedef void(^SCSnapshotCompletionHandler)(UIImage * _Nullable snapshot, NSError
 /// 完成分享快照
 - (void)snapshotManager:(SCSnapshotManager *)manager didFinishSharingSnapshot:(BOOL)success;
 
-/// 埋点
-- (void)trackEventWithContent:(id <SCSnapshotModel>)content behavior:(NSString *)behavior;
-
 @end
 
 
@@ -60,7 +57,7 @@ typedef void(^SCSnapshotCompletionHandler)(UIImage * _Nullable snapshot, NSError
 + (void)shareSnapshotWithModel:(id)model completionHandler:(nullable SCSnapshotCompletionHandler)completionHandler;
 
 /// 根据 h5 的 url 生成快照
-+ (void)generateSnapshotWithURLString:(NSString *)urlString completionHander:(nullable SCSnapshotCompletionHandler)completionHander;
++ (void)generateSnapshotWithURLString:(NSString *)urlString completionHandler:(nullable SCSnapshotCompletionHandler)completionHander;
 
 @end
 

@@ -28,7 +28,10 @@
     self.generateButton.layer.borderWidth = 1;
     self.generateButton.layer.cornerRadius = 2;
     
-    self.navigationItem.title = @"Generate From Content";
+    self.navigationItem.title = @"Generate From Model";
+    
+    NSString *imageName = self.modelType == SCSnapshotModelTypePost ? @"post" : @"merchant";
+    self.imageView.image = [UIImage imageNamed:imageName];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -52,7 +55,8 @@
 
 - (IBAction)generateSnapshot:(id)sender {
     
-    [SCSnapshotManager generateSnapshotWithContent:[SCSnapshotPostContent defaultContent] completionHander:^(UIImage * _Nullable snapshot, NSError * _Nullable error) {
+    
+    [SCSnapshotManager shareSnapshotWithModel:@{@"type" : @(self.modelType)} completionHandler:^(UIImage * _Nullable snapshot, NSError * _Nullable error) {
         if (!error) {
             SCPreviewViewController *controller = [[SCPreviewViewController alloc] initWithSnapshot:snapshot];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];

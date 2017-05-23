@@ -12,6 +12,7 @@
 
 // Components
 #import "SCSnapshotPostProvider.h"
+#import "SCSnapshotMerchantProvider.h"
 #import "SCQRCodeGenerator.h"
 #import "SCSnapshotImageDownloader.h"
 #import "SCSnapshotGenerator.h"
@@ -61,27 +62,6 @@
         if (error == nil && snapshot != nil) {
             
             SCSnapshotBlockCallback(completionHandler, snapshot, nil);
-            // 2. 分享
-//            [SCShareManager shareWithShareType:SSDKPlatformSubTypeWechatTimeline image:image text:nil success:^{
-//                // MARK: 这里为什么不用 __weak？如果用 weak，block 不会持有 manager，manager 在这个函数执行完，manager 不被任何对象持有，所以马上就销毁了，等到 block 回调时，manager 为 nil。 （block 作为函数参数的情况）
-//                if ([manager.provider respondsToSelector:@selector(snapshotManager:didFinishSharingSnapshot:)]) {
-//                    [manager.provider snapshotManager:manager didFinishSharingSnapshot:YES];
-//                }
-//                
-//                SCSnapshotBlockCallback(completionHandler, nil, image);
-//                
-//            } failture:^{
-//                NSError *shareError = [NSError errorWithDomain:SCSnapshotErrorDomain
-//                                                          code:SCSnapshotSharingFailedError
-//                                                      userInfo:@{@"ShareType" : @"SSDKPlatformSubTypeWechatTimeline",
-//                                                                 @"image" : image}];
-//                SCSnapshotBlockCallback(completionHandler, shareError, image);
-//                [SCCoreUtil showHUDMessageInWindow:kSnapshotShareFailureMessage];  // 提示分享照片失败
-//                
-//                [SCBugReporter reportError:shareError withType:SCBugReporterErrorTypeSnapshot];
-//            } cancel:^{
-//                // 取消则不作任何处理...
-//            }];
             
         } else {
             SCSnapshotBlockCallback(completionHandler, nil, error);
@@ -94,7 +74,15 @@
 - (void)generateSnapshotWithModel:(id)model completionHandler:(SCSnapshotCompletionHandler)completionHandler {
     
     // 1. 创建 provider
-    self.provider = [[SCSnapshotPostProvider alloc] init];
+    if ([model[@"type"] integerValue] == SCSnapshotModelTypePost) { // 图文帖快照
+        
+        self.provider = [[SCSnapshotPostProvider alloc] init];
+        
+    } else if ([model[@"type"] integerValue] == SCSnapshotModelTypeMerchant) { // 商户快照
+        
+        self.provider = [[SCSnapshotMerchantProvider alloc] init];
+    }
+    
     
     // 2. 转换 content
     id <SCSnapshotModel> content = [self.provider snapshotContentWithModel:model];

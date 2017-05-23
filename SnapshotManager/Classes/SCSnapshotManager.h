@@ -29,7 +29,7 @@ typedef void(^SCSnapshotCompletionHandler)(UIImage * _Nullable snapshot, NSError
 
 @required
 
-/// 校验 model，并将 model 统一转换成 遵循 SCSnapshotModel 协议的 model
+/// 校验 model，并将传进来的 model 统一转换成 遵循 SCSnapshotModel 协议的 model
 - (nullable id <SCSnapshotModel>)snapshotContentWithModel:(id)model;
 
 /// 要下载的图片 URL，是一个二维数组

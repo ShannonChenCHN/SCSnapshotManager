@@ -7,6 +7,7 @@
 //
 
 #import "SCSnapshotPostContent.h"
+#import "SCSnapshotConst.h"
 
 @implementation SCSnapshotPostContent
 
@@ -29,8 +30,8 @@
                         @"http://f.yhres.com/share_webcastEKZlZmtlAQNkZwuinSx/2017/03/25/512132450846813_6.png-q75",
                         @"http://f.yhres.com/share_webcastEKZlZmtlAQNkZwuinSx/2017/03/25/512132450866713_8.png-q75",
                         @"http://f.yhres.com/share_webcastEKZlZmtlAQNkZwuinSx/2017/03/25/512132450880938_7.png-q75"];
-    content.shareUrl = @"https://github.com/ShannonChenCHN";
-    content.shareDescription = @"长按识别二维码，加入时髦人士\n最爱的吃喝玩乐社区";
+    content.shareUrl = kSnapshotShareUrlDefault;
+    content.shareDescription = kSnapshotPostShareDescDefault;
     
     return content;
 }

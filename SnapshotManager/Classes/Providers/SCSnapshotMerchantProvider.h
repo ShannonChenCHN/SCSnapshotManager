@@ -1,8 +1,8 @@
 //
-//  SCSnapshotPostProvider.h
+//  SCSnapshotMerchantProvider.h
 //  SCSnapshotDemo
 //
-//  Created by ShannonChen on 17/5/18.
+//  Created by ShannonChen on 2017/5/23.
 //  Copyright © 2017年 ShannonChen. All rights reserved.
 //
 
@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 图文快照配置
+ 商户快照配置
  */
-@interface SCSnapshotPostProvider : NSObject <SCSnapshotProviderProtocol>
+@interface SCSnapshotMerchantProvider : NSObject <SCSnapshotProviderProtocol>
 
 @end
 

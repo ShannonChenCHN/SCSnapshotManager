@@ -36,6 +36,7 @@
 
 // 图片下载完成后创建 view
 - (UIView *)snapshotViewWithDowloadedImages:(NSArray<NSArray<UIImage *> *> *)imageArrays content:(nonnull id<SCSnapshotModel>)content {
+    
     SCSnapshotPostContent *model = (SCSnapshotPostContent *)content;
     
     if (imageArrays.count > 1 && imageArrays.firstObject.count > 0) {

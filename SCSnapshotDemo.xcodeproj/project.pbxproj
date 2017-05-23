@@ -23,6 +23,9 @@
 		582C6E431ECDBFD2005216E4 /* SCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C6E3B1ECDBFD2005216E4 /* SCWebViewController.xib */; };
 		582C6E471ECDC783005216E4 /* SCSnapshotPostProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E461ECDC783005216E4 /* SCSnapshotPostProvider.m */; };
 		582C6E4C1ECDC970005216E4 /* SCSnapshotModelTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */; };
+		583178DB1ED470CD00D33416 /* SCSnapshotMerchantContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 583178DA1ED470CD00D33416 /* SCSnapshotMerchantContentView.m */; };
+		583178DE1ED4730400D33416 /* SCCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 583178DD1ED4730400D33416 /* SCCustomButton.m */; };
+		583178E11ED479FD00D33416 /* SCSnapshotMerchantProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 583178E01ED479FD00D33416 /* SCSnapshotMerchantProvider.m */; };
 		583C4E921ED33C5800361B4A /* SCSnapshotMerchantContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 583C4E911ED33C5800361B4A /* SCSnapshotMerchantContent.m */; };
 		585113CF1E7EBF950053AFBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113CE1E7EBF950053AFBB /* main.m */; };
 		585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D11E7EBF950053AFBB /* AppDelegate.m */; };
@@ -69,6 +72,12 @@
 		582C6E491ECDC836005216E4 /* SCSnapshotConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotConst.h; sourceTree = "<group>"; };
 		582C6E4A1ECDC970005216E4 /* SCSnapshotModelTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotModelTransformer.h; sourceTree = "<group>"; };
 		582C6E4B1ECDC970005216E4 /* SCSnapshotModelTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotModelTransformer.m; sourceTree = "<group>"; };
+		583178D91ED470CD00D33416 /* SCSnapshotMerchantContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotMerchantContentView.h; sourceTree = "<group>"; };
+		583178DA1ED470CD00D33416 /* SCSnapshotMerchantContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotMerchantContentView.m; sourceTree = "<group>"; };
+		583178DC1ED4730400D33416 /* SCCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCustomButton.h; sourceTree = "<group>"; };
+		583178DD1ED4730400D33416 /* SCCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCustomButton.m; sourceTree = "<group>"; };
+		583178DF1ED479FD00D33416 /* SCSnapshotMerchantProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotMerchantProvider.h; sourceTree = "<group>"; };
+		583178E01ED479FD00D33416 /* SCSnapshotMerchantProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotMerchantProvider.m; sourceTree = "<group>"; };
 		583C4E901ED33C5800361B4A /* SCSnapshotMerchantContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotMerchantContent.h; sourceTree = "<group>"; };
 		583C4E911ED33C5800361B4A /* SCSnapshotMerchantContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotMerchantContent.m; sourceTree = "<group>"; };
 		585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCSnapshotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +145,8 @@
 			children = (
 				582C6E451ECDC783005216E4 /* SCSnapshotPostProvider.h */,
 				582C6E461ECDC783005216E4 /* SCSnapshotPostProvider.m */,
+				583178DF1ED479FD00D33416 /* SCSnapshotMerchantProvider.h */,
+				583178E01ED479FD00D33416 /* SCSnapshotMerchantProvider.m */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -156,8 +167,12 @@
 		582C6E241ECDBEC5005216E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				583178DC1ED4730400D33416 /* SCCustomButton.h */,
+				583178DD1ED4730400D33416 /* SCCustomButton.m */,
 				582C6E251ECDBEC5005216E4 /* SCSnapshotPostContentView.h */,
 				582C6E261ECDBEC5005216E4 /* SCSnapshotPostContentView.m */,
+				583178D91ED470CD00D33416 /* SCSnapshotMerchantContentView.h */,
+				583178DA1ED470CD00D33416 /* SCSnapshotMerchantContentView.m */,
 				582C6E271ECDBEC5005216E4 /* SCSnapshotWebView.h */,
 				582C6E281ECDBEC5005216E4 /* SCSnapshotWebView.m */,
 			);
@@ -407,16 +422,19 @@
 				582C6E3C1ECDBFD2005216E4 /* SCContentViewController.m in Sources */,
 				58F604561EB0F3F300E81A55 /* UIImage+SCExtension.m in Sources */,
 				582C6E4C1ECDC970005216E4 /* SCSnapshotModelTransformer.m in Sources */,
+				583178DB1ED470CD00D33416 /* SCSnapshotMerchantContentView.m in Sources */,
 				58F604541EB0F3F300E81A55 /* NSString+SCExtension.m in Sources */,
 				583C4E921ED33C5800361B4A /* SCSnapshotMerchantContent.m in Sources */,
 				582C6E2A1ECDBEC5005216E4 /* SCQRCodeGenerator.m in Sources */,
 				585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */,
 				582C6E471ECDC783005216E4 /* SCSnapshotPostProvider.m in Sources */,
+				583178DE1ED4730400D33416 /* SCCustomButton.m in Sources */,
 				585113CF1E7EBF950053AFBB /* main.m in Sources */,
 				582C6E2D1ECDBEC5005216E4 /* SCSnapshotPostContentView.m in Sources */,
 				58F604551EB0F3F300E81A55 /* UIColor+SCExtension.m in Sources */,
 				58F604571EB0F3F300E81A55 /* UIView+Layout.m in Sources */,
 				58F6045D1EB0F3F300E81A55 /* SCSnapshotManager.m in Sources */,
+				583178E11ED479FD00D33416 /* SCSnapshotMerchantProvider.m in Sources */,
 				582C6E2E1ECDBEC5005216E4 /* SCSnapshotWebView.m in Sources */,
 				582C6E2C1ECDBEC5005216E4 /* SCSnapshotImageDownloader.m in Sources */,
 				582C6E291ECDBEC5005216E4 /* SCSnapshotPostContent.m in Sources */,
@@ -540,11 +558,12 @@
 			baseConfigurationReference = A4938B8E35E9ADC5BA7874CE /* Pods-SCSnapshotDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L32PN8QKLZ;
 				INFOPLIST_FILE = SCSnapshotDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShannonChen.SCSnapshotDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shannonchen.SCSnapshotDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -554,11 +573,12 @@
 			baseConfigurationReference = FB4C822F41D4DD76FDBF5135 /* Pods-SCSnapshotDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L32PN8QKLZ;
 				INFOPLIST_FILE = SCSnapshotDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShannonChen.SCSnapshotDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shannonchen.SCSnapshotDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

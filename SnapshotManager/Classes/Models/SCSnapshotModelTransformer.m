@@ -14,7 +14,7 @@
 @implementation SCSnapshotModelTransformer
 
 + (id<SCSnapshotModel>)transformModel:(id)model {
-    // TODO:
+    
     if ([model isKindOfClass:[NSDictionary class]]) {
         
         if ([model[@"type"] integerValue] == SCSnapshotModelTypePost) {

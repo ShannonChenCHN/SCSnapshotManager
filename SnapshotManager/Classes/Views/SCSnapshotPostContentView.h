@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- 生成快照的 view
+ 生成图文帖快照的 view
  */
 @interface SCSnapshotPostContentView : UIView
 

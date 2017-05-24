@@ -11,25 +11,27 @@
 @implementation UIImage (SCExtension)
 
 + (UIImage *)sc_imageWithCIImage:(CIImage *)image size:(CGSize)size {
-    CGRect extent = CGRectIntegral(image.extent);
-    CGFloat scale = MIN(size.width/CGRectGetWidth(extent), size.height/CGRectGetHeight(extent));
     
-    // 1.创建bitmap;
-    size_t width = CGRectGetWidth(extent) * scale;
-    size_t height = CGRectGetHeight(extent) * scale;
-    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
-    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
-    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
-    CGContextScaleCTM(bitmapRef, scale, scale);
-    CGContextDrawImage(bitmapRef, extent, bitmapImage);
+    // Render the image into a CoreGraphics image
+    CGImageRef cgImage = [[CIContext contextWithOptions:nil] createCGImage:image fromRect:image.extent];
     
-    // 2.保存bitmap到图片
-    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
-    CGContextRelease(bitmapRef);
-    CGImageRelease(bitmapImage);
-    return [UIImage imageWithCGImage:scaledImage];
+    // Scale the image using CoreGraphics
+    CGFloat scale = [UIScreen mainScreen].scale;
+    UIGraphicsBeginImageContext(CGSizeMake(image.extent.size.width * scale, image.extent.size.width * scale));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetInterpolationQuality(context, kCGInterpolationNone);
+    CGContextDrawImage(context, CGContextGetClipBoundingBox(context), cgImage);
+    UIImage *preImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // Cleaning up
+    UIGraphicsEndImageContext();
+    CGImageRelease(cgImage);
+    
+    // Rotate the image
+    UIImage *qrImage = [UIImage imageWithCGImage:preImage.CGImage
+                                           scale:preImage.scale
+                                     orientation:UIImageOrientationDownMirrored];
+    return qrImage;
 }
 
 @end

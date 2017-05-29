@@ -26,6 +26,7 @@
 		583178DB1ED470CD00D33416 /* SCSnapshotMerchantContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 583178DA1ED470CD00D33416 /* SCSnapshotMerchantContentView.m */; };
 		583178DE1ED4730400D33416 /* SCCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 583178DD1ED4730400D33416 /* SCCustomButton.m */; };
 		583178E11ED479FD00D33416 /* SCSnapshotMerchantProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 583178E01ED479FD00D33416 /* SCSnapshotMerchantProvider.m */; };
+		583179821EDBCE9E00D33416 /* SCSnapshotDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583179811EDBCE9E00D33416 /* SCSnapshotDemoTests.m */; };
 		583C4E921ED33C5800361B4A /* SCSnapshotMerchantContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 583C4E911ED33C5800361B4A /* SCSnapshotMerchantContent.m */; };
 		585113CF1E7EBF950053AFBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113CE1E7EBF950053AFBB /* main.m */; };
 		585113D21E7EBF950053AFBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 585113D11E7EBF950053AFBB /* AppDelegate.m */; };
@@ -40,6 +41,16 @@
 		58F6045D1EB0F3F300E81A55 /* SCSnapshotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F604421EB0F3F200E81A55 /* SCSnapshotManager.m */; };
 		E1E185518C9D84B07BC9C2FC /* libPods-SCSnapshotDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC506717A181EBC45BB749A /* libPods-SCSnapshotDemo.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		583179841EDBCE9E00D33416 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 585113C21E7EBF950053AFBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 585113C91E7EBF950053AFBB;
+			remoteInfo = SCSnapshotDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		582C6E1A1ECDBEC5005216E4 /* SCSnapshotPostContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotPostContent.h; sourceTree = "<group>"; };
@@ -78,6 +89,9 @@
 		583178DD1ED4730400D33416 /* SCCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCustomButton.m; sourceTree = "<group>"; };
 		583178DF1ED479FD00D33416 /* SCSnapshotMerchantProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotMerchantProvider.h; sourceTree = "<group>"; };
 		583178E01ED479FD00D33416 /* SCSnapshotMerchantProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotMerchantProvider.m; sourceTree = "<group>"; };
+		5831797F1EDBCE9E00D33416 /* SCSnapshotDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCSnapshotDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		583179811EDBCE9E00D33416 /* SCSnapshotDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotDemoTests.m; sourceTree = "<group>"; };
+		583179831EDBCE9E00D33416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583C4E901ED33C5800361B4A /* SCSnapshotMerchantContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSnapshotMerchantContent.h; sourceTree = "<group>"; };
 		583C4E911ED33C5800361B4A /* SCSnapshotMerchantContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSnapshotMerchantContent.m; sourceTree = "<group>"; };
 		585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCSnapshotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +120,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5831797C1EDBCE9E00D33416 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		585113C71E7EBF950053AFBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,10 +219,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		583179801EDBCE9E00D33416 /* SCSnapshotDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				583179811EDBCE9E00D33416 /* SCSnapshotDemoTests.m */,
+				583179831EDBCE9E00D33416 /* Info.plist */,
+			);
+			path = SCSnapshotDemoTests;
+			sourceTree = "<group>";
+		};
 		585113C11E7EBF950053AFBB = {
 			isa = PBXGroup;
 			children = (
 				585113CC1E7EBF950053AFBB /* SCSnapshotDemo */,
+				583179801EDBCE9E00D33416 /* SCSnapshotDemoTests */,
 				585113CB1E7EBF950053AFBB /* Products */,
 				40D93F775BD1D884CFE52660 /* Pods */,
 				F0087A7DF948A96E2C02DF02 /* Frameworks */,
@@ -212,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				585113CA1E7EBF950053AFBB /* SCSnapshotDemo.app */,
+				5831797F1EDBCE9E00D33416 /* SCSnapshotDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,6 +323,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5831797E1EDBCE9E00D33416 /* SCSnapshotDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 583179881EDBCE9E00D33416 /* Build configuration list for PBXNativeTarget "SCSnapshotDemoTests" */;
+			buildPhases = (
+				5831797B1EDBCE9E00D33416 /* Sources */,
+				5831797C1EDBCE9E00D33416 /* Frameworks */,
+				5831797D1EDBCE9E00D33416 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				583179851EDBCE9E00D33416 /* PBXTargetDependency */,
+			);
+			name = SCSnapshotDemoTests;
+			productName = SCSnapshotDemoTests;
+			productReference = 5831797F1EDBCE9E00D33416 /* SCSnapshotDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		585113C91E7EBF950053AFBB /* SCSnapshotDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 585113E11E7EBF950053AFBB /* Build configuration list for PBXNativeTarget "SCSnapshotDemo" */;
@@ -321,6 +371,12 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = ShannonChen;
 				TargetAttributes = {
+					5831797E1EDBCE9E00D33416 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = L32PN8QKLZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 585113C91E7EBF950053AFBB;
+					};
 					585113C91E7EBF950053AFBB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = L32PN8QKLZ;
@@ -342,11 +398,19 @@
 			projectRoot = "";
 			targets = (
 				585113C91E7EBF950053AFBB /* SCSnapshotDemo */,
+				5831797E1EDBCE9E00D33416 /* SCSnapshotDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5831797D1EDBCE9E00D33416 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		585113C81E7EBF950053AFBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +476,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5831797B1EDBCE9E00D33416 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583179821EDBCE9E00D33416 /* SCSnapshotDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		585113C61E7EBF950053AFBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,6 +517,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		583179851EDBCE9E00D33416 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 585113C91E7EBF950053AFBB /* SCSnapshotDemo */;
+			targetProxy = 583179841EDBCE9E00D33416 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		585113D61E7EBF950053AFBB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -465,6 +545,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		583179861EDBCE9E00D33416 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = L32PN8QKLZ;
+				INFOPLIST_FILE = SCSnapshotDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShannonChen.SCSnapshotDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCSnapshotDemo.app/SCSnapshotDemo";
+			};
+			name = Debug;
+		};
+		583179871EDBCE9E00D33416 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = L32PN8QKLZ;
+				INFOPLIST_FILE = SCSnapshotDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShannonChen.SCSnapshotDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCSnapshotDemo.app/SCSnapshotDemo";
+			};
+			name = Release;
+		};
 		585113DF1E7EBF950053AFBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -586,6 +692,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		583179881EDBCE9E00D33416 /* Build configuration list for PBXNativeTarget "SCSnapshotDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				583179861EDBCE9E00D33416 /* Debug */,
+				583179871EDBCE9E00D33416 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		585113C51E7EBF950053AFBB /* Build configuration list for PBXProject "SCSnapshotDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

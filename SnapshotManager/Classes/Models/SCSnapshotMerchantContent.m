@@ -13,7 +13,7 @@
 
 @synthesize shareUrl = _shareUrl, qrCodeImage = _qrCodeImage;
 
-// TODO:
+
 + (instancetype)defaultContent {
     
     SCSnapshotMerchantContent *content = [[SCSnapshotMerchantContent alloc] init];

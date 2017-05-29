@@ -40,7 +40,7 @@
 - (void)downloadWithImageURLArrays:(NSArray<NSArray<NSString *> *> *)imageURLArrays completionHandler:(SCSnapshotImageDownloadCompletionHander)comletionHandler {
     
     if (imageURLArrays.count == 0) {
-        SCSnapshotBlockCallback(comletionHandler, [self downloadedImages], YES);
+        SCSnapshotBlockCallback(comletionHandler, [self downloadedImages], NO);
     }
     
     [self resetImageArraysWithURLArrays:imageURLArrays];

@@ -27,7 +27,9 @@
             
         }
         
-        
+    } else if ([model isKindOfClass:[SCSnapshotPostContent class]] ||
+              [model isKindOfClass:[SCSnapshotMerchantContent class]]) {
+        return model;
     }
     
     return nil;

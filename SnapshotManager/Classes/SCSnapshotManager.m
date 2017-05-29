@@ -10,6 +10,9 @@
 #import "SCSnapshotConst.h"
 
 
+#import "SCSnapshotPostContent.h"
+#import "SCSnapshotMerchantContent.h"
+
 // Components
 #import "SCSnapshotPostProvider.h"
 #import "SCSnapshotMerchantProvider.h"
@@ -74,11 +77,13 @@
 - (void)generateSnapshotWithModel:(id)model completionHandler:(SCSnapshotCompletionHandler)completionHandler {
     
     // 1. 创建 provider
-    if ([model[@"type"] integerValue] == SCSnapshotModelTypePost) { // 图文帖快照
+    if ([model isKindOfClass:[SCSnapshotPostContent class]] ||
+        ([model isKindOfClass:[NSDictionary class]] && [model[@"type"] integerValue] == SCSnapshotModelTypePost)) { // 图文帖快照
         
         self.provider = [[SCSnapshotPostProvider alloc] init];
         
-    } else if ([model[@"type"] integerValue] == SCSnapshotModelTypeMerchant) { // 商户快照
+    } else if ([model isKindOfClass:[SCSnapshotMerchantContent class]] ||
+               ([model isKindOfClass:[NSDictionary class]] && [model[@"type"] integerValue] == SCSnapshotModelTypeMerchant)) { // 商户快照
         
         self.provider = [[SCSnapshotMerchantProvider alloc] init];
     }
